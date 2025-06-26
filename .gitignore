@@ -1,0 +1,92 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependency directories
+node_modules/
+/node_modules
+/.pnp
+.pnp.js
+.pnpm-store/ # For pnpm users
+.yarn/ # For yarn v2+ users
+
+# Build artifacts
+dist/
+dist-ssr/
+build/ # Common build output if not 'dist'
+out/   # Another common build output
+.vite/ # Vite's cache directory
+
+# Production
+# For Vercel/Netlify, you typically want them to run `npm run build`
+# so you usually DO NOT commit your `dist` folder.
+# If you are deploying to something like GitHub Pages and building locally,
+# then you might remove 'dist/' from here and commit it.
+# But for Vercel, leave 'dist/' ignored.
+
+# Development and Local Files
+.env
+.env.local
+.env.*.local # Matches .env.development.local, .env.test.local, etc.
+.DS_Store # macOS specific
+.vscode/ # VS Code settings and extensions (if not shared by team)
+# You might want to include some VS Code files for team collaboration:
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+# But ignore local history
+.history
+.ionide
+
+# Testing
+/coverage # Jest/Vitest coverage reports
+*.failing.test.ts # Example of ignoring failing tests
+
+# Editor and OS specific files
+*~
+.#*
+*.swp
+*.bak
+*.swo
+.idea/ # JetBrains IDEs (IntelliJ, WebStorm, etc.)
+.webstorm.iml
+.next/ # Next.js specific (if you were using it)
+.nuxt/ # Nuxt.js specific (if you were using it)
+
+# VS Code specific files to ignore (unless shared)
+# These are often generated per user
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+
+# If you explicitly commit some .vscode files, you might need to negate them:
+# !.vscode/settings.json
+
+# Thumbnails and other OS generated files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+
+# npm cache and build output
+.npm/
+npm-cache/
+.eslintcache # ESLint cache file
+
+# yarn berry cache (if using yarn 2+)
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# Others
+.DS_Store
