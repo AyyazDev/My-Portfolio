@@ -1,3 +1,128 @@
+/* Basic reset and global styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* CSS Variables for Theming */
+:root {
+  /* Dark Theme Defaults */
+  --header-bg: rgba(33, 33, 33, 0.7);
+  --header-text-color: #FFFFFF;
+  --link-hover-filter: brightness(0.6);
+  --button-bg: #8a2be2; /* Example purple */
+  --button-hover-bg: #9932CC; /* Darker purple */
+  --mobile-menu-bg: rgba(0, 0, 0, 0.9); /* Dark background for mobile menu */
+  --green: #2ecc71; /* Example green from your styled-components */
+  --pink: #e74c3c; /* Example pink from your styled-components */
+}
+
+html.light {
+  /* Light Theme Overrides */
+  --header-bg: rgba(255, 255, 255, 0.8);
+  --header-text-color: #333333;
+  --link-hover-filter: brightness(1.2);
+  --button-bg: #3498db; /* Example blue */
+  --button-hover-bg: #2980b9; /* Darker blue */
+  --mobile-menu-bg: rgba(255, 255, 255, 0.9); /* Light background for mobile menu */
+  --green: #27ae60; /* Slightly different green for light theme */
+  --pink: #c0392b; /* Slightly different pink for light theme */
+}
+
+/* Apply theme variables to specific elements if not already done by Tailwind */
+/* This is often done by setting these as default Tailwind colors/backgrounds via tailwind.config.js */
+/* Or by applying them directly to body/root elements */
+body {
+  background-color: var(--background-color); /* Assuming you set these in ThemeContext */
+  color: var(--text-color); /* Assuming you set these in ThemeContext */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Specific styles for the theme toggle's visual representation */
+/* This mimics the styled-component's label styling */
+#theme-switch + label {
+  background: var(--green); /* Uses CSS variable for color */
+}
+
+#theme-switch:checked + label {
+  background: var(--pink); /* Uses CSS variable for color */
+}
+
+#theme-switch:checked + label::after {
+  transform: translateX(calc(100% - 8px)); /* Adjusted transform for consistent look */
+}
+
+
+/* Hamburger Menu Icon Styling */
+/* The base lines are defined by Tailwind spans in Header.jsx */
+.menu-icon.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.menu-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+
+/* Mobile Navigation Menu Specifics (when menu is open) */
+.mobile-menu-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%); /* Start off-screen to the right */
+  transition: opacity 0.25s ease-out, visibility 0.25s ease-out, transform 0.25s ease-out; /* Smooth transition */
+
+  /* Mobile layout for nav */
+  position: fixed;
+  top: 0;
+  right: 0; /* Align to right */
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Spacing between links */
+  background: var(--mobile-menu-bg); /* Use theme variable for background */
+  z-index: 999; /* Below header, above main content */
+  -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  overflow: hidden; /* Hide overflow */
+
+  & > a { /* Target NavHashLink and a.button directly */
+    color: var(--header-text-color); /* Ensure text color is themed */
+    font-size: 1.5rem; /* Larger font for mobile links */
+  }
+
+  & > a.button {
+    background-color: var(--button-bg); /* Use themed button background */
+  }
+}
+
+.mobile-menu-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0); /* Slide into view */
+}
+
+/* Media Query for Desktop (undo mobile styles) */
+@media (min-width: 1024px) { /* Tailwind's 'lg' breakpoint by default */
+  .mobile-menu-hidden, .mobile-menu-active {
+    all: unset; /* Reset all styles applied by mobile-menu-hidden/active */
+    display: flex; /* Re-apply flex for desktop layout */
+    align-items: center;
+    gap: 1.8rem; /* Original gap */
+    color: var(--header-text-color); /* Ensure text color is themed */
+    /* Other desktop specific nav styles */
+  }
+
+  .mobile-menu-hidden > a, .mobile-menu-active > a {
+    font-size: inherit; /* Reset font size for desktop */
+    color: var(--header-text-color);
+  }
+
+  .mobile-menu-hidden > a.button, .mobile-menu-active > a.button {
+    background-color: var(--button-bg);
+  }
+}
