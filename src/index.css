@@ -7,7 +7,7 @@
 :root {
   /* Dark Theme Defaults */
   --header-bg: rgba(33, 33, 33, 0.7);
-  --header-text-color: #FFFFFF;
+  --header-text-color: #000000;
   --link-hover-filter: brightness(0.6);
   --button-bg: #8a2be2; /* Example purple */
   --button-hover-bg: #9932CC; /* Darker purple */
