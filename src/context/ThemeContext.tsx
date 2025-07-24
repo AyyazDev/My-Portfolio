@@ -16,16 +16,15 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     return stored === 'light' ? 'light' : 'dark';
   });
 
-  useEffect(() => {
-    // Set HTML class for Tailwind dark mode
-    document.documentElement.classList.remove('light', 'dark');
-    document.documentElement.classList.add(theme);
+useEffect(() => {
+  document.documentElement.classList.remove('light', 'dark');
+  document.documentElement.classList.add(theme);
+  localStorage.setItem('theme', theme);
+}, [theme]);
 
-    // Persist theme
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
+const toggleTheme = () => {
+  setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+};
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
@@ -35,3 +34,6 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 };
 
 export const useTheme = () => useContext(ThemeContext);
+
+
+

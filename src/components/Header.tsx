@@ -2,15 +2,18 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Resume from '../../public/assets/Muhammad Ayyaz Resume.pdf';
 import { useTheme } from '../context/ThemeContext';
+import { Switch } from '@mui/material'; // Import the MUI Switch
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
+  // Function to close the mobile menu
   function closeMenu() {
     setIsMenuOpen(false);
   }
 
+  // Common Tailwind classes for navigation links
   const navClass = `
     transition duration-300 uppercase font-medium
     text-black dark:text-white
@@ -18,53 +21,44 @@ export default function Header() {
   `;
 
   return (
-    <header
-      className="
-        flex justify-between items-center
-        py-4 px-4 sm:px-8 md:px-16 lg:px-20 xl:px-40
-        bg-white dark:bg-gray-900 bg-opacity-70 backdrop-blur-md
-        fixed top-0 left-0 w-full z-[1000]
-        transition-colors duration-300
-      "
-    >
+    <header style={{ backgroundColor: 'var(--website-bg)' }} className={`flex justify-between items-center py-4 px-4 bg-white transition-colors duration-300`}>
       {/* Logo */}
-      <NavLink to="/" onClick={closeMenu} className="logo text-black dark:text-white text-2xl font-bold">
-        <span>{"<M. "}</span>
-        <span>{" Ayyaz/>"}</span>
-      </NavLink>
+ <NavLink
+  to="/"
+  onClick={closeMenu}
+  className="logo text-[30px] font-[Red_Hat_Display] font-bold no-underline"
+  style={{
+    color: theme === 'dark' ? 'white' : 'black',
+    textDecoration: 'none',
+  }}
+>
+  <span>{"< M. "}</span>
+  <span>{" Ayyaz/ > "}</span>
+</NavLink>
 
-      {/* Theme Toggle */}
-      <div className="flex items-center space-x-2 relative z-50">
-        <input
-          onChange={toggleTheme}
-          type="checkbox"
-          id="theme-switch"
-          name="mode"
-          checked={theme === 'light'}
-          className="hidden peer"
-        />
-        <label
-          htmlFor="theme-switch"
-          className="
-            relative block w-14 h-8 cursor-pointer rounded-full
-            bg-blue-500 transition-colors duration-300
-            after:content-[''] after:absolute after:top-1 after:left-1
-            after:w-6 after:h-6 after:bg-white after:rounded-full after:transition-transform
-            peer-checked:bg-purple-500 peer-checked:after:translate-x-6
-          "
-        >
-          <span className="sr-only">Toggle Theme</span>
-        </label>
-      </div>
-
-      {/* Navigation */}
+      {/* Navigation Menu */}
       <nav
-        className={`
-          flex items-center gap-7
-          ${isMenuOpen ? 'mobile-menu-active' : 'mobile-menu-hidden'}
-          lg:static lg:flex lg:h-auto lg:w-auto lg:flex-row lg:justify-normal lg:items-center lg:bg-transparent lg:visible lg:opacity-100
-        `}
-      >
+  className={`
+    ${isMenuOpen ? 'mobile-menu-active' : 'mobile-menu-hidden'}
+    lg:flex lg:items-center lg:gap-7
+  `}
+>
+
+        {/* MUI Theme Toggle Switch */}
+   <Switch
+  checked={theme === 'dark'}
+  onChange={toggleTheme}
+  sx={{
+    '& .MuiSwitch-thumb': {
+      backgroundColor: 'white',
+    },
+    '& .MuiSwitch-track': {
+      backgroundColor: `${theme === 'dark' ? '#23ce6b' : '#E31F71'} !important`,
+      opacity: '1 !important',
+    },
+  }}
+/>
+
         <NavLink
           to="/"
           onClick={closeMenu}
@@ -123,18 +117,17 @@ export default function Header() {
         </a>
       </nav>
 
-      {/* Hamburger Menu Icon */}
-      <div
-        aria-expanded={isMenuOpen ? 'true' : 'false'}
-        aria-haspopup="true"
-        aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-        className={`
-          menu-icon relative w-8 h-5 cursor-pointer flex flex-col justify-between z-50
-          lg:hidden
-          ${isMenuOpen ? 'active' : ''}
-        `}
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      >
+      {/* Hamburger Menu Icon for mobile */}
+    <div
+  className={`
+    lg:hidden
+    z-50
+    menu-icon relative w-8 h-5 cursor-pointer flex flex-col justify-between
+    ${isMenuOpen ? 'active' : ''}
+  `}
+  onClick={() => setIsMenuOpen(!isMenuOpen)}
+>
+
         <span className="block w-full h-0.5 bg-black dark:bg-white transition-transform duration-300 ease-in-out"></span>
         <span className="block w-full h-0.5 bg-black dark:bg-white transition-opacity duration-300 ease-in-out"></span>
         <span className="block w-full h-0.5 bg-black dark:bg-white transition-transform duration-300 ease-in-out"></span>

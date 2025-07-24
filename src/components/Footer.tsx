@@ -9,29 +9,29 @@ import gmail from "../../public/assets/gmail.svg";
 export default function Footer() {
   return (
     <footer>
-      <a href="https://muhammad-ayyaz.vercel.app/" className="logo">
+      <div className="flex justify-around">
+      <a href="https://muhammad-ayyaz.vercel.app/" className="logo content-center">
         <span>www.muhammad</span>
         <span>-ayyaz.vercel.app</span>
       </a>
-      <div >
-       <p className="flex items-center gap-2">
+     <p className="flex items-center" style={{ gap: '6px' }}>
   This Website was made with
   <img
     src={react}
     alt="React"
-    className="!w-6 !h-6 object-contain"
+    className="!w-6 !h-6 object-contain animate-spinSlow"
     style={{ width: '32px', height: '32px' }}
   />
 </p>
 
-      </div>
+
       <div className="social-media flex gap-4 items-center">
   <a href="https://www.linkedin.com/in/muhammad-ayyaz-2614491ba" target="_blank" rel="noreferrer">
     <img
       src={linkedin}
       alt="Linkedin"
       className="!w-6 !h-6 object-contain"
-      style={{ width: '24px', height: '24px' }}
+      style={{ width: '32px', height: '32px' }}
     />
   </a>
   <a href="https://github.com/AyyazDev" target="_blank" rel="noreferrer">
@@ -51,7 +51,7 @@ export default function Footer() {
       src={whatsapp}
       alt="Whatsapp"
       className="!w-6 !h-6 object-contain"
-      style={{ width: '24px', height: '24px' }}
+      style={{ width: '34px', height: '34px' }}
     />
   </a>
  <a
@@ -63,12 +63,12 @@ export default function Footer() {
     src={gmail}
     alt="gmail"
     className="!w-6 !h-6 object-contain"
-    style={{ width: '24px', height: '24px' }}
+    style={{ width: '26px', height: '26px' }}
   />
 </a>
 
 </div>
-
+</div>
 
 
     </footer>
