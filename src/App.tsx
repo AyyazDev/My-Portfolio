@@ -24,8 +24,7 @@ export default function App() {
   return (
     <ThemeProvider>
       <Router>
-         <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">
-        {/* Particles shown globally behind everything */}
+<div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">        {/* Particles shown globally behind everything */}
         <Particles
           id="tsparticles"
           init={particlesInit}
