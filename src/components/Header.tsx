@@ -21,7 +21,16 @@ export default function Header() {
   `;
 
   return (
-    <header style={{ backgroundColor: 'var(--website-bg)' }} className={`flex justify-between items-center py-4 px-4 bg-white transition-colors duration-300`}>
+<header
+  style={{
+    backgroundColor: 'var(--website-bg)',
+    backdropFilter: 'blur(8px)',
+    opacity: 0.95,
+  }}
+  className="backdrop-blur-sm px-4 py-4 flex items-center justify-around sticky top-0 z-40"
+>
+
+<div>
       {/* Logo */}
  <NavLink
   to="/"
@@ -35,7 +44,9 @@ export default function Header() {
   <span>{"< M. "}</span>
   <span>{" Ayyaz/ > "}</span>
 </NavLink>
+</div>
 
+<div>
       {/* Navigation Menu */}
       <nav
   className={`
@@ -49,6 +60,7 @@ export default function Header() {
   checked={theme === 'dark'}
   onChange={toggleTheme}
   sx={{
+    transform: 'scale(1.3)',
     '& .MuiSwitch-thumb': {
       backgroundColor: 'white',
     },
@@ -58,6 +70,7 @@ export default function Header() {
     },
   }}
 />
+
 
         <NavLink
           to="/"
@@ -111,7 +124,7 @@ export default function Header() {
         <a
           href={Resume}
           download
-          className="py-2 px-6 rounded-md bg-purple-600 hover:bg-purple-700 text-white transition-colors duration-250"
+          className="py-2 px-6 rounded-md bg-purple-600 hover:bg-purple-700 text-white transition-colors duration-250 no-underline"
         >
           RESUME
         </a>
@@ -131,6 +144,7 @@ export default function Header() {
         <span className="block w-full h-0.5 bg-black dark:bg-white transition-transform duration-300 ease-in-out"></span>
         <span className="block w-full h-0.5 bg-black dark:bg-white transition-opacity duration-300 ease-in-out"></span>
         <span className="block w-full h-0.5 bg-black dark:bg-white transition-transform duration-300 ease-in-out"></span>
+      </div>
       </div>
     </header>
   );

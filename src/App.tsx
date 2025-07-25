@@ -24,45 +24,59 @@ export default function App() {
   return (
     <ThemeProvider>
       <Router>
-<div className="min-h-screen bg-white dark:bg-black text-black dark:text-white transition-colors duration-300">        {/* Particles shown globally behind everything */}
-        <Particles
-          id="tsparticles"
-          init={particlesInit}
-          options={{
-            fullScreen: { enable: true, zIndex: -1 },
-            particles: {
-              number: { value: 15, density: { enable: true, area: 800 } },
-              shape: { type: "image", image: shuffledIcons },
-              move: { enable: true, speed: 2 },
-              size: { value: 16 },
-              opacity: { value: 1, random: true },
-            },
-            detectRetina: true,
-          }}
-        />
+       <div
+  className="min-h-screen relative transition-colors duration-300"
+  style={{
+    backgroundColor: 'var(--website-bg)',
+    color: 'var(--website-text-color)',
+  }}
+>
 
-        <Header />
-        <main className="pt-20">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/education" element={<Education />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route
-          path={"*"}
-          element={
-              <NotFound />
-          }
-        />
-          </Routes>
-        </main>
-        <Analytics />
-        <Footer />
+
+          {/* Particles at zIndex -1 */}
+          <Particles
+            id="tsparticles"
+            init={particlesInit}
+            options={{
+              fullScreen: { enable: true, zIndex: -1 },
+              particles: {
+                number: { value: 15, density: { enable: true, area: 800 } },
+                shape: { type: "image", image: shuffledIcons },
+                move: { enable: true, speed: 2 },
+                size: { value: 16 },
+                opacity: { value: 1, random: true },
+              },
+              detectRetina: true,
+            }}
+          />
+
+          {/* Overlay: applies background color site-wide */}
+          <div
+            className="absolute inset-0 -z-10"
+            style={{
+              backgroundColor: 'var(--website-bg)',
+            }}
+          />
+
+          {/* Actual site content */}
+          <Header />
+          <main className="pt-20 transition-colors duration-300 text-[var(--website-text-color)]">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/experience" element={<Experience />} />
+              <Route path="/education" element={<Education />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
+          <Analytics />
         </div>
       </Router>
     </ThemeProvider>
   );
 }
+
