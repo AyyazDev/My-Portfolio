@@ -13,12 +13,18 @@ export default {
         },
       },
       animation: {
-        slowSpin: 'spin 2s linear infinite',
+  spinSlow: 'spin 2s linear infinite', // ✅ matches `animate-spinSlow`
+},
+fontFamily: {
+        redhat: ['"Red Hat Display"', 'sans-serif'],
       },
       colors: {
         green: {
           500: "#00b894",
           600: "#019874",
+        },
+         greyCustom: {
+        100: "#DCDCDC",
         },
       },
     },
