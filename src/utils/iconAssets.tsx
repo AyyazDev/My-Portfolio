@@ -19,25 +19,25 @@ import typescript from "../../public/assets/typescript.svg";
 import vercel from "../../public/assets/vercel.svg";
 
 const allIconAssets = [
-  { src: aws, width: 40, height: 40 },
-  { src: bootstrap, width: 40, height: 40 },
-  { src: cpp, width: 40, height: 40 },
-  { src: css, width: 40, height: 40 },
-  { src: expressjs, width: 40, height: 40 },
-  { src: github, width: 40, height: 40 },
-  { src: html, width: 40, height: 40 },
-  { src: javascript, width: 40, height: 40 },
-  { src: materialui, width: 40, height: 40 },
-  { src: mongodb, width: 40, height: 40 },
-  { src: nestjs, width: 40, height: 40 },
-  { src: nextjs, width: 40, height: 40 },
-  { src: nodejs, width: 40, height: 40 },
-  { src: postgresql, width: 40, height: 40 },
-  { src: react, width: 40, height: 40 },
-  { src: redux, width: 40, height: 40 },
-  { src: tailwindcss, width: 40, height: 40 },
-  { src: typescript, width: 40, height: 40 },
-  { src: vercel, width: 40, height: 40 },
+  { src: "/assets/aws.svg", width: 40, height: 40 },
+  { src: "/assets/bootstrap.svg", width: 40, height: 40 },
+  { src: "/assets/cpp.svg", width: 40, height: 40 },
+  { src: "/assets/css.svg", width: 40, height: 40 },
+  { src: "/assets/expressjs.svg", width: 40, height: 40 },
+  { src: "/assets/github.svg", width: 40, height: 40 },
+  { src: "/assets/html.svg" , width: 40, height: 40 },
+  { src: "/assets/javascript.svg" , width: 40, height: 40 },
+  { src: "/assets/materialui.svg", width: 40, height: 40 },
+  { src: "/assets/mongodb.svg", width: 40, height: 40 },
+  { src: "/assets/nestjs.svg", width: 40, height: 40 },
+  { src: "/assets/nextjs.svg", width: 40, height: 40 },
+  { src: "/assets/nodejs.svg", width: 40, height: 40 },
+  { src: "/assets/postgresql.svg", width: 40, height: 40 },
+  { src: "/assets/react.svg", width: 40, height: 40 },
+  { src: "/assets/redux.svg", width: 40, height: 40 },
+  { src: "/assets/tailwindcss.svg", width: 40, height: 40 },
+  { src: "/assets/typescript.svg", width: 40, height: 40 },
+  { src: "/assets/vercel.svg", width: 40, height: 40 },
 ];
 
 function shuffleArray(array: any[]) {
@@ -53,4 +53,7 @@ function shuffleArray(array: any[]) {
   return cloned;
 }
 
-export const shuffledIcons = shuffleArray(allIconAssets);
+export function getShuffledIcons() {
+  return shuffleArray(allIconAssets);
+}
+

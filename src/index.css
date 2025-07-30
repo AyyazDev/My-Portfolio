@@ -15,17 +15,6 @@ a {
 }
 
 
-html.light {
-  --website-bg: #F5F5F5;
-  --website-text-color: #000000;
-  --link-hover-filter: brightness(1.2);
-  --button-bg: #3498db;
-  --button-hover-bg: #2980b9;
-  --mobile-menu-bg: #F5F5F5;
-  --green: #27ae60;
-  --pink: #c0392b;
-}
-
 html.dark {
   --website-bg: #212121;
   --website-text-color: #ffffff;
@@ -33,6 +22,15 @@ html.dark {
   --green: #23ce6b;
   --pink: #E31F71;
 }
+
+html.light {
+  --website-bg: #F5F5F5;
+  --website-text-color: #000000;
+  --mobile-menu-bg: #F5F5F5;
+  --green: #27ae60;
+  --pink: #c0392b;
+}
+
 
 
 
