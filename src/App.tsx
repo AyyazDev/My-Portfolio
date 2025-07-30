@@ -2,7 +2,7 @@ import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import { useCallback } from "react";
 import { Engine } from "tsparticles-engine";
-import { shuffledIcons } from "./utils/iconAssets"; // Extracted icon assets and shuffle logic
+import { getShuffledIcons } from './utils/iconAssets';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Header from './components/Header';
@@ -16,10 +16,13 @@ import Education from '../src/pages/Education';
 import Experience from '../src/pages/Experience';
 import NotFound from '../src/pages/NotFound';
 import Skills from '../src/pages/Skills';
+import { useMemo } from 'react';
 export default function App() {
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
   }, []);
+
+    const icons = useMemo(() => getShuffledIcons(), []);
 
   return (
     <ThemeProvider>
@@ -34,29 +37,32 @@ export default function App() {
 
 
           {/* Particles at zIndex -1 */}
-          <Particles
-            id="tsparticles"
-            init={particlesInit}
-            options={{
-              fullScreen: { enable: true, zIndex: -1 },
-              particles: {
-                number: { value: 15, density: { enable: true, area: 800 } },
-                shape: { type: "image", image: shuffledIcons },
-                move: { enable: true, speed: 2 },
-                size: { value: 16 },
-                opacity: { value: 1, random: true },
-              },
-              detectRetina: true,
-            }}
-          />
+        <Particles
+  id="tsparticles"
+  init={particlesInit}
+  options={{
+    fullScreen: { enable: true, zIndex: 999 },
+    background: { color: { value: "transparent" } },
+    particles: {
+      number: { value: 15, density: { enable: true, area: 800 } },
+      shape: { type: "image", image: icons },
+      move: { enable: true, speed: 2 },
+      size: { value: 16 },
+      opacity: { value: 1, random: true },
+    },
+    detectRetina: true,
+  }}
+/>
+
+
+
+
 
           {/* Overlay: applies background color site-wide */}
-          <div
-            className="absolute inset-0 -z-10"
-            style={{
-              backgroundColor: 'var(--website-bg)',
-            }}
-          />
+          {/* This should be lower than tsparticles (-1) */}
+<div className="absolute inset-0 -z-20" style={{ backgroundColor: 'var(--website-bg)' }} />
+
+
 
           {/* Actual site content */}
           <Header />
