@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Resume from '../../public/assets/Muhammad Ayyaz Resume.pdf';
 import { useTheme } from '../context/ThemeContext';
 import { Switch } from '@mui/material'; // Import the MUI Switch
+import CloseIcon from '@mui/icons-material/Close'; 
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,12 +47,21 @@ export default function Header() {
 </NavLink>
 </div>
 
+<CloseIcon
+    onClick={closeMenu}
+    className="close-icon lg:hidden cursor-pointer"
+    sx={{
+      color: theme === 'dark' ? 'white' : 'black',
+      fontSize: 32,
+    }}
+  />
+
 <div>
       {/* Navigation Menu */}
-      <nav
+     <nav
   className={`
     ${isMenuOpen ? 'mobile-menu-active' : 'mobile-menu-hidden'}
-    lg:flex lg:items-center lg:gap-7
+    lg:flex lg:items-center lg:gap-7 relative
   `}
 >
 
