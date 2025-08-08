@@ -69,16 +69,29 @@ html.light {
 .mobile-menu-active {
   display: flex;
   flex-direction: column;
-  position: fixed;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* already has this */
   top: 0;
   right: 0;
   width: 100vw;
   height: 100vh;
-  justify-content: center;
-  align-items: center;
   background: var(--mobile-menu-bg);
   z-index: 50;
 }
+
+.mobile-menu-active {
+  align-items: flex-start;  /* ✅ allows absolutely positioned children */
+}
+
+/* Make sure the CloseIcon can float above the menu overlay */
+.close-icon {
+  position: fixed;      /* so it’s relative to the viewport */
+  top: 1.25rem;         /* same as top-5 in Tailwind */
+  right: 1.25rem;       /* same as right-5 */
+  z-index: 60;          /* above your overlay which is z-50 */
+}
+
 
 
 /* Media Query for Desktop (undo mobile styles) */
