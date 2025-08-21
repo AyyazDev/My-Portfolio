@@ -47,22 +47,10 @@ export default function Header() {
 </NavLink>
 </div>
 
-<CloseIcon
-    onClick={closeMenu}
-    className="close-icon lg:hidden cursor-pointer"
-    sx={{
-      color: theme === 'dark' ? 'white' : 'black',
-      fontSize: 32,
-    }}
-  />
-
 <div>
       {/* Navigation Menu */}
      <nav
-  className={`
-    ${isMenuOpen ? 'mobile-menu-active' : 'mobile-menu-hidden'}
-    lg:flex lg:items-center lg:gap-7 relative
-  `}
+  className='mobile-menu-hidden'
 >
 
         {/* MUI Theme Toggle Switch */}
@@ -139,22 +127,6 @@ export default function Header() {
           RESUME
         </a>
       </nav>
-
-      {/* Hamburger Menu Icon for mobile */}
-    <div
-  className={`
-    lg:hidden
-    z-50
-    menu-icon relative w-8 h-5 cursor-pointer flex flex-col justify-between
-    ${isMenuOpen ? 'active' : ''}
-  `}
-  onClick={() => setIsMenuOpen(!isMenuOpen)}
->
-
-        <span className="block w-full h-0.5 bg-black dark:bg-white transition-transform duration-300 ease-in-out"></span>
-        <span className="block w-full h-0.5 bg-black dark:bg-white transition-opacity duration-300 ease-in-out"></span>
-        <span className="block w-full h-0.5 bg-black dark:bg-white transition-transform duration-300 ease-in-out"></span>
-      </div>
       </div>
     </header>
   );
