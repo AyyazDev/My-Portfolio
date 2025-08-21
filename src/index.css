@@ -64,26 +64,6 @@ html.light {
 }
 
 
-/* Mobile Navigation Menu Specifics (when menu is open) */
-.mobile-menu-hidden,
-.mobile-menu-active {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: fixed; /* already has this */
-  top: 0;
-  right: 0;
-  width: 100vw;
-  height: 100vh;
-  background: var(--mobile-menu-bg);
-  z-index: 50;
-}
-
-.mobile-menu-active {
-  align-items: flex-start;  /* ✅ allows absolutely positioned children */
-}
-
 /* Make sure the CloseIcon can float above the menu overlay */
 .close-icon {
   position: fixed;      /* so it’s relative to the viewport */
@@ -92,11 +72,50 @@ html.light {
   z-index: 60;          /* above your overlay which is z-50 */
 }
 
+.react-icon {
+  animation: spinning 5s infinite linear;
+}
 
+@keyframes spinning {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Default: keep your desktop/laptop exactly as-is */
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Stack ONLY on small screens (mobile). 
+   If you also want tablets, change 768px to 1024px. */
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  /* Override inline margins on small screens */
+  .footer-inner .logo {
+    margin-left: 0 !important;
+  }
+
+  .footer-inner .social-media {
+    margin-right: 0 !important;
+    justify-content: center;
+  }
+}
 
 /* Media Query for Desktop (undo mobile styles) */
 @media (min-width: 1024px) { /* Tailwind's 'lg' breakpoint by default */
-  .mobile-menu-hidden, .mobile-menu-active {
+  .mobile-menu-hidden {
     all: unset; /* Reset all styles applied by mobile-menu-hidden/active */
     display: flex; /* Re-apply flex for desktop layout */
     align-items: center;
@@ -105,12 +124,12 @@ html.light {
     /* Other desktop specific nav styles */
   }
 
-  .mobile-menu-hidden > a, .mobile-menu-active > a {
+  .mobile-menu-hidden > a {
     font-size: inherit; /* Reset font size for desktop */
     color: var(--website-text-color);
   }
 
-  .mobile-menu-hidden > a.button, .mobile-menu-active > a.button {
+  .mobile-menu-hidden > a.button {
     background-color: var(--button-bg);
   }
 }

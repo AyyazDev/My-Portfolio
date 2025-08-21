@@ -5,16 +5,7 @@ export default {
   ],
   darkMode: 'class',
   theme: {
-    extend: {
-      keyframes: {
-        spin: {
-          '0%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg)' },
-        },
-      },
-      animation: {
-  spinSlow: 'spin 2s linear infinite', // ✅ matches `animate-spinSlow`
-},
+     extend: {
 fontFamily: {
         redhat: ['"Red Hat Display"', 'sans-serif'],
       },
