@@ -3,12 +3,12 @@ import React from "react";
 export default function Main() {
   return (
     <main
-      className="
-        relative z-10 flex flex-col items-center justify-center min-h-screen 
-        py-8 text-center transition-colors duration-300 
-        bg-[var(--website-bg)] text-[var(--website-text-color)]
-      "
-    >
+  className="transition-colors duration-300 text-[var(--website-text-color)]"
+  style={{
+    paddingTop: '12vh', // matches header height (adjust responsive below)
+  }}
+>
+
       {/* Container ensures padding on all devices */}
       <div className="w-full px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 max-w-screen-lg">
         <div
@@ -17,7 +17,85 @@ export default function Main() {
             text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl
           "
         >
+          ayyaz Main Page Content Your Main Page Content Your Main Page Content
           Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content Your Main Page Content Your Main Page Content
+          Your Main Page Content   Your Main Page Content Your Main Page Content Your Main Page Content
           Your Main Page Content Your Main Page Content Your Main Page Content
           Your Main Page Content Your Main Page Content Your Main Page Content
           Your Main Page Content

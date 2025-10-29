@@ -30,7 +30,7 @@ export default function Footer() {
         marginLeft: "8rem"
       }}
     >
-      www.muhammad-ayyaz.vercel.app
+      muhammad-ayyaz.vercel.app
     </NavLink>
 
     {/* Made with React */}
