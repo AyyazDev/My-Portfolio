@@ -40,13 +40,13 @@ export default function App() {
           }}
         >
           {/* ✅ Particles stay behind content */}
-          <div className="absolute inset-0 z-10 pointer-events-none">
+          <div className="absolute inset-0 z-0 pointer-events-none">
             <Particles
               id="tsparticles"
               init={particlesInit}
               style={{ position: 'absolute', inset: 0 }}
               options={{
-                fullScreen: { enable: false },
+                fullScreen: { enable: true, zIndex: 19 },
                 background: { color: { value: "transparent" } },
                 particles: {
                   number: { value: 15, density: { enable: true, area: 800 } },
