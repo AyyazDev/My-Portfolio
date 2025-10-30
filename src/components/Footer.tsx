@@ -19,7 +19,7 @@ export default function Footer() {
   }}
   className="py-4"
 >
-  <div className="flex items-center justify-between px-6 footer-inner">
+  <div className="flex items-center justify-between py-[1.5rem] footer-inner">
     {/* Logo */}
     <NavLink
       to="/"

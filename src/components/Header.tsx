@@ -1,69 +1,178 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import Resume from '../../public/assets/Muhammad Ayyaz Resume.pdf';
-import { useTheme } from '../context/ThemeContext';
-import { Switch } from '@mui/material';
+import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import Resume from "../../public/assets/Muhammad Ayyaz Resume.pdf";
+import { useTheme } from "../context/ThemeContext";
+import Switch from "@mui/material/Switch";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1366);
 
   const navClass = `
     transition duration-300 uppercase font-medium
-    text-black dark:text-white
-    hover:text-gray-700 dark:hover:text-gray-300
+    text-[var(--website-text-color)]
+    hover:opacity-70
   `;
 
-  return (
-<header
-  style={{ backgroundColor: 'var(--website-bg)', backdropFilter: 'blur(8px)' }}
-  className="fixed top-0 left-0 w-full z-50 h-[12vh] md:h-[10vh] lg:h-[8vh] flex items-center justify-around px-4 md:px-8 transition-colors duration-300"
->
-  {/* Logo */}
-  <NavLink
-    to="/"
-    onClick={() => setIsMenuOpen(false)}
-    className="text-[2rem] md:text-[2.5rem] lg:text-3xl font-bold no-underline flex items-center h-full"
-    style={{ color: 'var(--website-text-color)' }}
-  >
-    <span>{"< M. "}</span>
-    <span>{" Ayyaz/ > "}</span>
-  </NavLink>
+  const navLinks = ["Home", "About", "Skills", "Projects", "Experience", "Education", "Contact"];
 
-  <nav className="flex items-center h-full space-x-4 md:space-x-6 lg:space-x-8">
-    <Switch
-      checked={theme === 'dark'}
-      onChange={toggleTheme}
+  useEffect(() => {
+    const handleResize = () => setIsDesktop(window.innerWidth >= 1366);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <>
+
+{isDesktop && (
+  <header
+    className="fixed top-0 left-0 w-full z-50 h-[8vh] flex items-center justify-around py-[1rem]"
+    style={{
+      backgroundColor: "rgba(30, 30, 30, 0.15)", // subtle dark overlay
+      backdropFilter: "blur(2px)",               // very soft blur
+      WebkitBackdropFilter: "blur(2px)",        // for Safari
+    }}
+  >
+    <NavLink
+      to="/"
+      className="text-[2rem] md:text-[2.5rem] lg:text-3xl font-bold no-underline text-[var(--website-text-color)]"
+    >
+      <span>{"< M. "}</span> <span>{" Ayyaz/ > "}</span>
+    </NavLink>
+
+    <nav className="flex items-center" style={{ gap: "2vw" }}>
+      <Switch
+        checked={theme === "dark"}
+        onChange={toggleTheme}
+        sx={{
+          transform: "scale(1.3)",
+          "& .MuiSwitch-thumb": { backgroundColor: "white" },
+          "& .MuiSwitch-track": {
+            backgroundColor: `${theme === "dark" ? "#23ce6b" : "#E31F71"} !important`,
+            opacity: "1 !important",
+          },
+        }}
+      />
+
+      {navLinks.map((item) => {
+        const path = item === "Home" ? "/" : `/${item.toLowerCase()}`;
+        return (
+          <NavLink key={item} to={path} className={navClass}>
+            {item}
+          </NavLink>
+        );
+      })}
+
+      <a
+        href={Resume}
+        download
+        style={{
+          backgroundColor: "#22CA6E",
+          color: "white",
+          padding: "10px 25px",
+          borderRadius: "9999px",
+          fontWeight: "600",
+          display: "inline-block",
+          fontSize: "1rem",
+          border: "2px solid #22CA6E",
+        }}
+        className="hover:opacity-90 transition-all duration-300 tracking-wide"
+      >
+        RESUME
+      </a>
+    </nav>
+  </header>
+)}
+
+
+{!isDesktop && (
+  <header
+ className="fixed top-0 left-0 w-full z-50 h-[10vh] flex items-center justify-between px-4 sm:px-6 md:px-10 lg:px-16"
+
+    style={{
+      backgroundColor: "rgba(255, 255, 255, 0.02)", // ultra subtle
+      backdropFilter: "blur(4px)",                  // soft blur
+      padding: "0 1.5rem",
+      boxSizing: "border-box", // 👈 prevents content overflow
+    }}
+  >
+    <NavLink
+      to="/"
+      className="text-[2rem] md:text-[2.5rem] lg:text-3xl font-bold no-underline text-[var(--website-text-color)]"
+    >
+      <span>{"< M. "}</span> <span>{" Ayyaz/ > "}</span>
+    </NavLink>
+
+    <nav className="flex items-center" style={{ gap: "2vw" }}>
+      <Switch
+        checked={theme === "dark"}
+        onChange={toggleTheme}
+        sx={{
+          transform: "scale(1.2)",
+          "& .MuiSwitch-thumb": { backgroundColor: "white" },
+          "& .MuiSwitch-track": {
+            backgroundColor: `${theme === "dark" ? "#23ce6b" : "#E31F71"} !important`,
+            opacity: "1 !important",
+          },
+        }}
+      />
+
+      <MenuIcon
+        sx={{ color: "var(--website-text-color)", cursor: "pointer" }}
+        fontSize="large"
+        onClick={() => setIsMenuOpen(true)}
+      />
+    </nav>
+  </header>
+)}
+
+
+
+      {/* ============ FULLSCREEN MOBILE MENU ============ */}
+ {isMenuOpen && (
+  <div
+     style={{
+    backgroundColor: "var(--mobile-menu-bg)",
+    backdropFilter: "none", // remove any blur
+  }}
+    className="fixed top-0 left-0 w-full h-full z-[9999] flex flex-col items-center justify-center"
+  >
+    <CloseIcon
+      onClick={() => setIsMenuOpen(false)}
       sx={{
-        transform: 'scale(1.3)',
-        '& .MuiSwitch-thumb': { backgroundColor: 'white' },
-        '& .MuiSwitch-track': {
-          backgroundColor: `${theme === 'dark' ? '#23ce6b' : '#E31F71'} !important`,
-          opacity: '1 !important',
-        },
+        color: "var(--website-text-color)",
+        cursor: "pointer",
+        position: "absolute",
+        top: "25px",
+        right: "25px",
       }}
+      fontSize="large"
     />
 
-    {['Home', 'About', 'Skills', 'Projects', 'Experience', 'Education', 'Contact'].map((item) => (
-      <NavLink
-        key={item}
-        to={`/${item.toLowerCase()}`}
-        className={`${navClass} flex items-center justify-center h-full px-2 md:px-4 lg:px-6`}
-      >
-        {item}
-      </NavLink>
-    ))}
+    <div className="flex flex-col items-center">
+      {navLinks.map((item) => {
+        const path = item === "Home" ? "/" : `/${item.toLowerCase()}`;
+        return (
+          <NavLink
+            key={item}
+            to={path}
+            onClick={() => setIsMenuOpen(false)}
+            className={`${navClass} text-2xl leading-[3.2rem]`} // ✅ spacing applied here
+          >
+            {item}
+          </NavLink>
+        );
+      })}
 
-    <a
-      href={Resume}
-      download
-      className="flex items-center justify-center h-full rounded-md bg-purple-600 hover:bg-purple-700 text-white transition-colors duration-250 px-4 md:px-6 lg:px-8"
-    >
-      RESUME
-    </a>
-  </nav>
-</header>
+      <a href={Resume} download style={{ backgroundColor: "#22CA6E", color: "white", padding: "4px 14px", borderRadius: "9999px", fontWeight: "600", display: "inline-block", fontSize: "1.1rem", border: "2px solid #22CA6E", }} className="hover:opacity-90 transition-all duration-300 tracking-wide" > RESUME </a>
+    </div>
+  </div>
+)}
 
-
+    </>
   );
 }

@@ -18,7 +18,7 @@ a {
 html.dark {
   --website-bg: #212121;
   --website-text-color: #ffffff;
-  --mobile-menu-bg: rgba(0, 0, 0, 0.9);
+  --mobile-menu-bg: #212121;
   --green: #23ce6b;
   --pink: #E31F71;
 }
@@ -131,5 +131,24 @@ html.light {
 
   .mobile-menu-hidden > a.button {
     background-color: var(--button-bg);
+  }
+}
+
+
+/* Apply mobile (stacked) footer on tablets too */
+@media (max-width: 1200px) {
+  .footer-inner {
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: center;
+  }
+
+  .footer-inner .logo {
+    margin-left: 0 !important;
+  }
+
+  .footer-inner .social-media {
+    margin-right: 0 !important;
+    justify-content: center;
   }
 }
