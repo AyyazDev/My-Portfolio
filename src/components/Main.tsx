@@ -1,13 +1,15 @@
 import React from "react";
+import Home from "../pages/Home";
 
 export default function Main() {
   return (
     <main
   className="transition-colors z-50 duration-300 text-[var(--website-text-color)]"
   style={{
-    paddingTop: '12vh', // matches header height (adjust responsive below)
+    paddingTop: '16vh', // matches header height (adjust responsive below)
     paddingLeft: '2rem',
     paddingRight: '2rem',
+    paddingBottom: '4vh'
   }}
 >
 
@@ -102,18 +104,6 @@ export default function Main() {
           Your Main Page Content Your Main Page Content Your Main Page Content
           Your Main Page Content
         </div>
-
-        <p
-          className="
-            mt-4 
-            text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl
-          "
-        >
-          Ayyaz is here with unique, floating tech icons! Your Main Page Content
-          Your Main Page Content Your Main Page Content Your Main Page Content
-          Your Main Page Content Your Main Page Content Your Main Page Content
-          Your Main Page Content Your Main Page Content
-        </p>
       </div>
     </main>
   );
