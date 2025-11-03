@@ -3,20 +3,14 @@ import { loadSlim } from "tsparticles-slim";
 import { useCallback, useMemo } from "react";
 import { Engine } from "tsparticles-engine";
 import { getShuffledIcons } from './utils/iconAssets';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { Analytics } from "@vercel/analytics/react";
 
 import Home from '../src/pages/Home';
-import About from '../src/pages/About';
-import Contact from '../src/pages/Contact';
-import Projects from '../src/pages/Projects';
-import Education from '../src/pages/Education';
-import Experience from '../src/pages/Experience';
-import NotFound from '../src/pages/NotFound';
-import Skills from '../src/pages/Skills';
+import Main from "./components/Main";
 
 export default function App() {
   const particlesInit = useCallback(async (engine: Engine) => {
@@ -28,8 +22,6 @@ export default function App() {
   return (
     <ThemeProvider>
       <Router>
-
-        {/* ✅ Header moved OUTSIDE of the relative container */}
         <Header />
 
         <div
@@ -39,7 +31,6 @@ export default function App() {
             color: 'var(--website-text-color)',
           }}
         >
-          {/* ✅ Particles stay behind content */}
           <div className="absolute inset-0 z-0 pointer-events-none">
             <Particles
               id="tsparticles"
@@ -60,17 +51,8 @@ export default function App() {
             />
           </div>
 
-<main className="pt-28 transition-colors duration-300 text-[var(--website-text-color)]">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/skills" element={<Skills />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/experience" element={<Experience />} />
-              <Route path="/education" element={<Education />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+          <main className="pt-28">
+            <Main />
           </main>
 
           <Footer />
