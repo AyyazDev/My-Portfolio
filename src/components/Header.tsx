@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, animateScroll as scroll } from "react-scroll";
 import Resume from "../../public/assets/Muhammad Ayyaz Resume.pdf";
 import { useTheme } from "../context/ThemeContext";
 import Switch from "@mui/material/Switch";
@@ -17,7 +17,7 @@ export default function Header() {
     hover:opacity-70
   `;
 
-  const navLinks = ["Home", "About", "Skills", "Projects", "Experience", "Education", "Contact"];
+  const Links = ["Home", "About", "Skills", "Projects", "Experience", "Education", "Contact"];
 
   useEffect(() => {
     const handleResize = () => setIsDesktop(window.innerWidth >= 1366);
@@ -37,12 +37,12 @@ export default function Header() {
       WebkitBackdropFilter: "blur(2px)",        // for Safari
     }}
   >
-    <NavLink
+    <Link
       to="/"
       className="text-[2rem] md:text-[2.5rem] lg:text-3xl font-bold no-underline text-[var(--website-text-color)]"
     >
       <span>{"< M. "}</span> <span>{" Ayyaz/ > "}</span>
-    </NavLink>
+    </Link>
 
     <nav className="flex items-center" style={{ gap: "2vw" }}>
       <Switch
@@ -58,14 +58,21 @@ export default function Header() {
         }}
       />
 
-      {navLinks.map((item) => {
-        const path = item === "Home" ? "/" : `/${item.toLowerCase()}`;
-        return (
-          <NavLink key={item} to={path} className={navClass}>
-            {item}
-          </NavLink>
-        );
-      })}
+     {Links.map((item) => {
+  return (
+    <Link
+      key={item}
+      to={item.toLowerCase()}
+      smooth={true}
+      duration={600}
+      offset={-100} // offsets header height
+      className={navClass + " cursor-pointer"}
+    >
+      {item}
+    </Link>
+  );
+})}
+
 
       <a
         href={Resume}
@@ -100,12 +107,12 @@ export default function Header() {
       boxSizing: "border-box", // 👈 prevents content overflow
     }}
   >
-    <NavLink
+    <Link
       to="/"
       className="text-[2rem] md:text-[2.5rem] lg:text-3xl font-bold no-underline text-[var(--website-text-color)]"
     >
       <span>{"< M. "}</span> <span>{" Ayyaz/ > "}</span>
-    </NavLink>
+    </Link>
 
     <nav className="flex items-center" style={{ gap: "2vw" }}>
       <Switch
@@ -154,19 +161,20 @@ export default function Header() {
     />
 
     <div className="flex flex-col items-center">
-      {navLinks.map((item) => {
-        const path = item === "Home" ? "/" : `/${item.toLowerCase()}`;
-        return (
-          <NavLink
-            key={item}
-            to={path}
-            onClick={() => setIsMenuOpen(false)}
-            className={`${navClass} text-2xl leading-[3.2rem]`} // ✅ spacing applied here
-          >
-            {item}
-          </NavLink>
-        );
-      })}
+      {Links.map((item) => (
+  <Link
+    key={item}
+    to={item.toLowerCase()}
+    smooth={true}
+    duration={600}
+    offset={-80}
+    onClick={() => setIsMenuOpen(false)}
+    className={`${navClass} text-2xl leading-[3.2rem] cursor-pointer`}
+  >
+    {item}
+  </Link>
+))}
+
 
       <a href={Resume} download style={{ backgroundColor: "#22CA6E", color: "white", padding: "4px 14px", borderRadius: "9999px", fontWeight: "600", display: "inline-block", fontSize: "1.1rem", border: "2px solid #22CA6E", }} className="hover:opacity-90 transition-all duration-300 tracking-wide" > RESUME </a>
     </div>
