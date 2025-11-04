@@ -9,15 +9,8 @@ import Contact from "../pages/Contact";
 
 export default function Main() {
   return (
-    <main
-      className="transition-colors z-50 duration-300 text-[var(--website-text-color)]"
-      style={{
-        paddingTop: "16vh", // Adjusts gap below fixed header
-        paddingLeft: "2rem",
-        paddingRight: "2rem",
-        paddingBottom: "4vh",
-      }}
-    >
+   <main className="pt-0 lg-screen:bg-red-500 lg-screen:pt-[9vh] px-8 pb-[4vh]">
+
       <div className="w-full px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 max-w-screen-xl mx-auto">
 
         {/* ✅ Hero / Landing Section */}

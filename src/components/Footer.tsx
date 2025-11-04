@@ -17,7 +17,7 @@ export default function Footer() {
     backgroundColor: theme === "dark" ? "rgb(43, 43, 43)" : "rgba(0, 0, 0, 0.1)",
     color: theme === "dark" ? "white" : "black",
   }}
-  className="py-4"
+  className="py-4 z-20 relative"
 >
   <div className="flex items-center justify-between py-[1.5rem] footer-inner">
     {/* Logo */}

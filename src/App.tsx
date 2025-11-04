@@ -37,7 +37,7 @@ export default function App() {
               init={particlesInit}
               style={{ position: 'absolute', inset: 0 }}
               options={{
-                fullScreen: { enable: true, zIndex: 19 },
+                fullScreen: { enable: true, zIndex: 1 },
                 background: { color: { value: "transparent" } },
                 particles: {
                   number: { value: 15, density: { enable: true, area: 800 } },
