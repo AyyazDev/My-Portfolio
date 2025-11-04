@@ -6,6 +6,9 @@ export default {
   darkMode: 'class',
   theme: {
      extend: {
+       screens: {
+        "lg-screen": "1366px",   // ✅ only width check now
+      },
 fontFamily: {
         redhat: ['"Red Hat Display"', 'sans-serif'],
       },

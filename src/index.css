@@ -93,6 +93,28 @@ html.light {
   justify-content: space-between;
 }
 
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.social-icons img {
+  width: 35px;
+  height: 35px;
+  transition: 0.3s;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.social-icons img:hover {
+  transform: translateY(-3px);
+  opacity: 1;
+}
+
+
 /* Stack ONLY on small screens (mobile). 
    If you also want tablets, change 768px to 1024px. */
 @media (max-width: 768px) {
@@ -152,3 +174,10 @@ html.light {
     justify-content: center;
   }
 }
+
+@media (max-width: 1365px) {
+  .hero-illustration {
+    display: none !important;
+  }
+}
+
