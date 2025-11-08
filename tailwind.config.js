@@ -16,6 +16,7 @@ fontFamily: {
         green: {
           500: "#00b894",
           600: "#019874",
+          700: "#22CA6E",
         },
          greyCustom: {
         100: "#DCDCDC",

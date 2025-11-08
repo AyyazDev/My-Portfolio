@@ -16,6 +16,8 @@ export default function Footer() {
   style={{
     backgroundColor: theme === "dark" ? "rgb(43, 43, 43)" : "rgba(0, 0, 0, 0.1)",
     color: theme === "dark" ? "white" : "black",
+    backdropFilter: "blur(2px)",               // very soft blur
+      WebkitBackdropFilter: "blur(2px)",        // for Safari
   }}
   className="py-4 z-20 relative"
 >
