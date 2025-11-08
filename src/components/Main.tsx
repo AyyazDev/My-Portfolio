@@ -9,7 +9,7 @@ import Contact from "../pages/Contact";
 
 export default function Main() {
   return (
-   <main className="pt-0 lg-screen:bg-red-500 lg-screen:pt-[9vh] px-8 pb-[4vh]">
+   <main className="pt-0 lg-screen:bg-red-500 lg-screen:pt-[9vh] px-8 pb-[4vh] z-10 relative">
 
       <div className="w-full px-4 sm:px-6 md:px-12 lg:px-20 xl:px-32 max-w-screen-xl mx-auto">
 

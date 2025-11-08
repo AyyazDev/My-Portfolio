@@ -4,26 +4,46 @@ import { useCallback, useMemo } from "react";
 import { Engine } from "tsparticles-engine";
 import { getShuffledIcons } from './utils/iconAssets';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { ThemeProvider } from './context/ThemeContext';
+import { ThemeProvider, useTheme } from './context/ThemeContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { Analytics } from "@vercel/analytics/react";
-
-import Home from '../src/pages/Home';
 import Main from "./components/Main";
 
-export default function App() {
+function ParticlesBackground() {
+  const { theme } = useTheme(); // ✅ inside ThemeProvider
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
   }, []);
 
-  const icons = useMemo(() => getShuffledIcons(), []);
+  const icons = useMemo(() => getShuffledIcons(theme), [theme]);
 
+  return (
+    <Particles
+      id="tsparticles"
+      init={particlesInit}
+      style={{ position: 'absolute', inset: 0 }}
+      options={{
+        fullScreen: { enable: true, zIndex: 1 },
+        background: { color: { value: "transparent" } },
+        particles: {
+          number: { value: 15, density: { enable: true, area: 800 } },
+          shape: { type: "image", image: icons },
+          move: { enable: true, speed: 2 },
+          size: { value: 16 },
+          opacity: { value: 1, random: true },
+        },
+        detectRetina: true,
+      }}
+    />
+  );
+}
+
+export default function App() {
   return (
     <ThemeProvider>
       <Router>
         <Header />
-
         <div
           className="min-h-screen relative transition-colors duration-300"
           style={{
@@ -32,33 +52,16 @@ export default function App() {
           }}
         >
           <div className="absolute inset-0 z-0 pointer-events-none">
-            <Particles
-              id="tsparticles"
-              init={particlesInit}
-              style={{ position: 'absolute', inset: 0 }}
-              options={{
-                fullScreen: { enable: true, zIndex: 1 },
-                background: { color: { value: "transparent" } },
-                particles: {
-                  number: { value: 15, density: { enable: true, area: 800 } },
-                  shape: { type: "image", image: icons },
-                  move: { enable: true, speed: 2 },
-                  size: { value: 16 },
-                  opacity: { value: 1, random: true },
-                },
-                detectRetina: true,
-              }}
-            />
+            <ParticlesBackground /> {/* Theme-aware particles */}
           </div>
 
-          <main className="pt-28">
+          <main className="pt-28 relative z-10">
             <Main />
           </main>
 
           <Footer />
           <Analytics />
         </div>
-
       </Router>
     </ThemeProvider>
   );
