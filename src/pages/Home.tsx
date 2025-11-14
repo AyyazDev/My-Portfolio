@@ -34,7 +34,7 @@ export default function Home() {
 
         {/* 👋 Greeting */}
         <Fade direction="left">
-          <p className="text-lg flex items-center gap-[0.15rem]">
+          <p className="text-lg flex items-center gap-[0.25rem]">
             Hi <img src={Hello} width="24" alt="wave" />, I'm
           </p>
         </Fade>
@@ -51,15 +51,17 @@ export default function Home() {
 
         {/* 💚 Title */}
         <Fade direction="up" delay={200}>
-       <h3 className="text-green-700 dark:text-green-700 text-2xl font-semibold">
+      <h3 className="text-2xl font-semibold dark:!text-green-700">
   Software Engineer
 </h3>
+
+
 
         </Fade>
 
         {/* ⏳ Experience */}
         <Fade direction="up" delay={400}>
-          <p className="opacity-80">2+ Years Experience</p>
+          <p className="opacity-80  mb-[2.5rem]">2+ Years Experience</p>
         </Fade>
 
         {/* ✉️ Contact Button */}
@@ -95,7 +97,7 @@ export default function Home() {
               <img
                 src={linkedin}
                 alt="Linkedin"
-                className="w-[1.75rem] h-[1.75rem] object-contain"
+                className="w-[2.15rem] h-[2.15rem] object-contain"
               />
             </a>
 
@@ -103,7 +105,7 @@ export default function Home() {
               <img
                 src={theme === "dark" ? green_github : github}
                 alt="GitHub"
-                className="w-[1.75rem] h-[1.75rem] object-contain"
+                className="w-[2.10rem] h-[2.10rem] object-contain"
               />
             </a>
 
@@ -115,7 +117,7 @@ export default function Home() {
               <img
                 src={whatsapp}
                 alt="Whatsapp"
-                className="w-[1.875rem] h-[1.875rem] object-contain"
+                className="w-[2rem] h-[2rem] object-contain"
               />
             </a>
 
@@ -127,7 +129,7 @@ export default function Home() {
               <img
                 src={gmail}
                 alt="gmail"
-                className="w-[1.625rem] h-[1.625rem] object-contain"
+                className="w-[1.725rem] h-[1.725rem] object-contain"
               />
             </a>
           </div>

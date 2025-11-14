@@ -57,19 +57,19 @@ export default function Footer() {
       style={{ gap: "0.7rem", marginRight: "8rem" }}
     >
       <a href="https://www.linkedin.com/in/muhammad-ayyaz-2614491ba" target="_blank" rel="noreferrer">
-        <img src={linkedin} alt="Linkedin" className="!w-[2rem] !h-[2rem] object-contain" />
+        <img src={linkedin} alt="Linkedin" className="!w-[2.15rem] !h-[2.15rem] object-contain" />
       </a>
 
       <a href="https://github.com/AyyazDev" target="_blank" rel="noreferrer">
-        <img src={theme === "dark" ? green_github : github} alt="GitHub" className="!w-[1.75rem] !h-[1.75rem] object-contain" />
+        <img src={theme === "dark" ? green_github : github} alt="GitHub" className="!w-2.10rem] !h-[2.10rem] object-contain" />
       </a>
 
       <a href="https://api.whatsapp.com/send/?phone=%2B923164539608&text=Hello+Muhammad+Ayyaz+I+found+your+contact+through+your+portfolio+site.%0A%0A" target="_blank" rel="noreferrer">
-        <img src={whatsapp} alt="Whatsapp" className="!w-[1.875rem] !h-[1.875rem] object-contain" />
+        <img src={whatsapp} alt="Whatsapp" className="!w-[2rem] !h-[2rem] object-contain" />
       </a>
 
       <a href="mailto:ayyazfakhar@gmail.com?subject=Hello%20Muhammad%20Ayyaz&body=I%20found%20your%20contact%20through%20your%20portfolio%20site." target="_blank" rel="noreferrer">
-        <img src={gmail} alt="gmail" className="!w-[1.625rem] !h-[1.625rem] object-contain" />
+        <img src={gmail} alt="gmail" className="!w-[1.725rem] !h-[1.725rem] object-contain" />
       </a>
     </div>
   </div>
