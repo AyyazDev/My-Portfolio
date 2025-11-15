@@ -1,6 +1,5 @@
 import React from "react";
 import Home from "../pages/Home";
-import About from "../pages/About";
 import Skills from "../pages/Skills";
 import Projects from "../pages/Projects";
 import Experience from "../pages/Experience";
@@ -18,24 +17,19 @@ export default function Main() {
           <Home />
         </section>
 
-        {/* ✅ About Section */}
-        <section id="about" className="py-20">
-          <About />
-        </section>
-
         {/* ✅ Skills Section */}
         <section id="skills" className="py-20">
           <Skills />
         </section>
 
-        {/* ✅ Projects Section */}
-        <section id="projects" className="py-20">
-          <Projects />
-        </section>
-
         {/* ✅ Experience Section */}
         <section id="experience" className="py-20">
           <Experience />
+        </section>
+
+        {/* ✅ Projects Section */}
+        <section id="projects" className="py-20">
+          <Projects />
         </section>
 
         {/* ✅ Education Section */}
