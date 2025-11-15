@@ -5,17 +5,16 @@ import { useTheme } from "../context/ThemeContext";
 import Switch from "@mui/material/Switch";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import "../index.css";
+
 
 export default function Header() {
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1366);
 
-  const navClass = `
-    transition duration-300 uppercase font-medium
-    text-[var(--website-text-color)]
-    hover:opacity-70
-  `;
+const navClass = "transition duration-300 uppercase text-[var(--website-text-color)] hover:opacity-70 font-medium";
+
 
   const Links = ["Home", "Skills", "Experience", "Projects", "Education", "Contact"];
 
@@ -30,7 +29,7 @@ export default function Header() {
 
 {isDesktop && (
   <header
-    className="fixed top-0 left-0 w-full z-50 h-[8vh] flex items-center justify-around py-[1rem]"
+    className="fixed top-0 left-0 w-full z-50 h-[12.5vh] flex items-center justify-around py-4"
     style={{
       backgroundColor: "rgba(30, 30, 30, 0.15)", // subtle dark overlay
       backdropFilter: "blur(2px)",               // very soft blur
@@ -38,11 +37,12 @@ export default function Header() {
     }}
   >
     <Link
-      to="/"
-      className="text-[2rem] md:text-[2.5rem] lg:text-3xl font-bold no-underline text-[var(--website-text-color)]"
-    >
-      <span>{"< M. "}</span> <span>{" Ayyaz/ > "}</span>
-    </Link>
+  to="/"
+  className="no-underline text-[5rem] md:text-[6rem] lg:text-[2rem] text-(--website-text-color)"
+>
+  <span>{"< M. "}</span> <span>{" Ayyaz/ > "}</span>
+</Link>
+
 
     <nav className="flex items-center" style={{ gap: "2vw" }}>
       <Switch
@@ -109,7 +109,7 @@ export default function Header() {
   >
     <Link
       to="/"
-      className="text-[2rem] md:text-[2.5rem] lg:text-3xl font-bold no-underline text-[var(--website-text-color)]"
+      className="text-[2rem] md:text-[2.5rem] lg:text-3xl no-underline text-(--website-text-color)"
     >
       <span>{"< M. "}</span> <span>{" Ayyaz/ > "}</span>
     </Link>
@@ -146,7 +146,7 @@ export default function Header() {
     backgroundColor: "var(--mobile-menu-bg)",
     backdropFilter: "none", // remove any blur
   }}
-    className="fixed top-0 left-0 w-full h-full z-[9999] flex flex-col items-center justify-center"
+    className="fixed top-0 left-0 w-full h-full z-9999 flex flex-col items-center justify-center"
   >
     <CloseIcon
       onClick={() => setIsMenuOpen(false)}
@@ -160,24 +160,30 @@ export default function Header() {
       fontSize="large"
     />
 
-    <div className="flex flex-col items-center">
-      {Links.map((item) => (
-  <Link
-    key={item}
-    to={item.toLowerCase()}
-    smooth={true}
-    duration={600}
-    offset={-80}
-    onClick={() => setIsMenuOpen(false)}
-    className={`${navClass} text-2xl leading-[3.2rem] cursor-pointer`}
+    <div className="flex flex-col items-center space-y-4">
+  {Links.map((item) => (
+    <Link
+      key={item}
+      to={item.toLowerCase()}
+      smooth={true}
+      duration={600}
+      offset={-80}
+      onClick={() => setIsMenuOpen(false)}
+      className={`${navClass} leading-[3.2rem] cursor-pointer`}
+    >
+      {item}
+    </Link>
+  ))}
+
+  <a
+    href={Resume}
+    download
+    className="hover:opacity-90 transition-all duration-300 tracking-wide bg-[#22CA6E] text-white px-4 py-1 rounded-full font-semibold text-[1.1rem] border-2 border-[#22CA6E]"
   >
-    {item}
-  </Link>
-))}
+    RESUME
+  </a>
+</div>
 
-
-      <a href={Resume} download style={{ backgroundColor: "#22CA6E", color: "white", padding: "4px 14px", borderRadius: "9999px", fontWeight: "600", display: "inline-block", fontSize: "1.1rem", border: "2px solid #22CA6E", }} className="hover:opacity-90 transition-all duration-300 tracking-wide" > RESUME </a>
-    </div>
   </div>
 )}
 

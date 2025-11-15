@@ -1,7 +1,4 @@
-/* Basic reset and global styles */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 html, body, #root {
   min-height: 100%;
@@ -182,9 +179,14 @@ h2,h3 {
   }
 }
 
-@media (max-width: 1365px) {
-  .hero-illustration {
-    display: none !important;
-  }
+
+
+.home-section {
+  min-height: 100vh; /* default for <1366px screens */
 }
 
+@media (min-width: 1366px) {
+  .home-section {
+    min-height: 70vh; /* for 1366px and above */
+  }
+}

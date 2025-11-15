@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { useTheme } from "../context/ThemeContext";
 import { Fade, Slide, Zoom } from "react-awesome-reveal";
 
-import ayyazImg from "../../public/assets/ayyaz_image.png";
+import ayyazImg from "../../public/assets/my-image.png";
 import Hello from "../../public/assets/Hello.gif";
 
 import linkedin from "../../public/assets/linkedin.svg";
@@ -16,25 +15,19 @@ export default function Home() {
   const { theme } = useTheme();
 
   return (
-    <section
-      id="home"
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "space-around",
-        paddingLeft: "2rem",
-        paddingRight: "2rem",
-        paddingTop: "0rem",
-      }}
-    >
+  <section
+  id="home"
+  className="flex flex-col md:flex-row items-center justify-between px-8 sm:px-12 lg:px-32 pt-8"
+  style={{ minHeight: "70vh" }}
+>
+
+
       {/* LEFT TEXT AREA */}
       <div className="space-y-4 max-w-xl">
 
         {/* 👋 Greeting */}
         <Fade direction="left">
-          <p className="text-lg flex items-center gap-[0.25rem]">
+          <p className="text-lg flex items-center gap-1">
             Hi <img src={Hello} width="24" alt="wave" />, I'm
           </p>
         </Fade>
@@ -42,7 +35,7 @@ export default function Home() {
         {/* 🧑‍💻 Name */}
         <Slide direction="left">
           <h1
-            className="font-extrabold tracking-tight"
+            className="font-bold tracking-tight"
             style={{ fontSize: "clamp(2.4rem, 5vw, 3.6rem)" }}
           >
             Muhammad Ayyaz
@@ -70,7 +63,7 @@ export default function Home() {
         {/* ⏳ Experience */}
        <Fade direction="up" delay={400}>
   <p
-    className="opacity-80 mb-[2.5rem]"
+    className="opacity-80 mb-8"
     style={{ fontWeight: 700 }} 
   >
     2+ Years Experience
@@ -94,7 +87,7 @@ export default function Home() {
               fontSize: "1rem",
               border: "2px solid #22CA6E",
             }}
-            className="hover:opacity-90 transition-all duration-300 tracking-wide mb-[2rem]"
+            className="hover:opacity-90 transition-all duration-300 tracking-wide mb-3"
           >
             Contact
           </Link>
@@ -131,7 +124,7 @@ export default function Home() {
               <img
                 src={whatsapp}
                 alt="Whatsapp"
-                className="w-[2rem] h-[2rem] object-contain"
+                className="w-8 h-8 object-contain"
               />
             </a>
 
@@ -152,7 +145,7 @@ export default function Home() {
 
       {/* RIGHT IMAGE */}
       <Slide direction="right" delay={300}>
-        <div className="mt-10 md:mt-0 flex justify-center md:justify-end relative hero-illustration">
+<div className="mt-10 md:mt-0 flex justify-center md:justify-end relative hero-illustration">
           <img
             src={ayyazImg}
             alt="Developer Illustration"
