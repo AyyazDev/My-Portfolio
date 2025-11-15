@@ -9,6 +9,7 @@ html, body, #root {
   padding: 0;
   font-family: 'Red Hat Display', sans-serif; /* ✅ Apply font */
   transition: background-color 0.3s ease, color 0.3s ease;
+   overflow-x: hidden;
 }
 a {
   text-decoration: none;
@@ -21,6 +22,8 @@ html.dark {
   --mobile-menu-bg: #212121;
   --green: #23ce6b;
   --pink: #E31F71;
+  --h2-color: #2ae980;
+  --h3-color: #2ae980;
 }
 
 html.light {
@@ -29,10 +32,14 @@ html.light {
   --mobile-menu-bg: #F5F5F5;
   --green: #27ae60;
   --pink: #c0392b;
+   --h3-color: #000000;
 }
 
 
-
+h2,h3 {
+  color: var(--h3-color);
+  transition: color 0.3s ease; /* smooth transition on theme change */
+}
 
 /* Specific styles for the theme toggle's visual representation */
 /* This mimics the styled-component's label styling */

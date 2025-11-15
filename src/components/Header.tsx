@@ -17,7 +17,7 @@ export default function Header() {
     hover:opacity-70
   `;
 
-  const Links = ["Home", "About", "Skills", "Projects", "Experience", "Education", "Contact"];
+  const Links = ["Home", "Skills", "Experience", "Projects", "Education", "Contact"];
 
   useEffect(() => {
     const handleResize = () => setIsDesktop(window.innerWidth >= 1366);

@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { useTheme } from "../context/ThemeContext";
 import { Fade, Slide, Zoom } from "react-awesome-reveal";
 
-import illusSVG from "../../public/assets/Programming-pana.svg";
+import ayyazImg from "../../public/assets/ayyaz_image.png";
 import Hello from "../../public/assets/Hello.gif";
 
 import linkedin from "../../public/assets/linkedin.svg";
@@ -11,7 +11,7 @@ import github from "../../public/assets/github.svg";
 import green_github from "../../public/assets/green_github.svg";
 import whatsapp from "../../public/assets/whatsapp.svg";
 import gmail from "../../public/assets/gmail.svg";
-
+import TypewriterTransition from "./TypewriterTransition";
 export default function Home() {
   const { theme } = useTheme();
 
@@ -51,18 +51,32 @@ export default function Home() {
 
         {/* 💚 Title */}
         <Fade direction="up" delay={200}>
-      <h3 className="text-2xl font-semibold dark:!text-green-700">
-  Software Engineer
+      <h3 className="text-2xl font-semibold">
+  <TypewriterTransition
+  words={[
+    "Software Engineer",
+    "Full Stack Developer",
+    "MERN Stack Developer",
+    "Database Developer"
+  ]}
+  typeSpeed={120}
+  deleteSpeed={60}
+  waitTime={1500}
+/>
+
 </h3>
-
-
-
         </Fade>
 
         {/* ⏳ Experience */}
-        <Fade direction="up" delay={400}>
-          <p className="opacity-80  mb-[2.5rem]">2+ Years Experience</p>
-        </Fade>
+       <Fade direction="up" delay={400}>
+  <p
+    className="opacity-80 mb-[2.5rem]"
+    style={{ fontWeight: 700 }} 
+  >
+    2+ Years Experience
+  </p>
+</Fade>
+
 
         {/* ✉️ Contact Button */}
         <Zoom delay={600}>
@@ -140,10 +154,10 @@ export default function Home() {
       <Slide direction="right" delay={300}>
         <div className="mt-10 md:mt-0 flex justify-center md:justify-end relative hero-illustration">
           <img
-            src={illusSVG}
+            src={ayyazImg}
             alt="Developer Illustration"
             style={{
-              width: "clamp(220px, 38vw, 520px)",
+              width: "clamp(220px, 28vw, 520px)",
               height: "auto",
             }}
           />
