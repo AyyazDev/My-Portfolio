@@ -2,41 +2,42 @@ import { Link } from "react-scroll";
 import { useTheme } from "../context/ThemeContext";
 import { Fade, Slide, Zoom } from "react-awesome-reveal";
 
-import ayyazImg from "../../public/assets/my-image.png";
-import Hello from "../../public/assets/Hello.gif";
+import ayyazImg from "/assets/my-image.png";
+import Hello from "/assets/Hello.gif";
 
-import linkedin from "../../public/assets/linkedin.svg";
-import github from "../../public/assets/github.svg";
-import green_github from "../../public/assets/green_github.svg";
-import whatsapp from "../../public/assets/whatsapp.svg";
-import gmail from "../../public/assets/gmail.svg";
+import linkedin from "/assets/linkedin.svg";
+import github from "/assets/github.svg";
+import green_github from "/assets/green_github.svg";
+import whatsapp from "/assets/whatsapp.svg";
+import gmail from "/assets/gmail.svg";
+
 import TypewriterTransition from "./TypewriterTransition";
+
 export default function Home() {
   const { theme } = useTheme();
 
   return (
-  <section
-  id="home"
-  className="flex flex-col md:flex-row items-center justify-between px-8 sm:px-12 lg:px-32 pt-8"
-  style={{ minHeight: "70vh" }}
->
-
-
+    <section
+      id="home"
+      className="flex flex-col md:flex-row items-center justify-between 
+                 px-6 sm:px-10 lg:px-24 xl:px-24 pt-8 
+                 min-h-[79vh] overflow-hidden"
+    >
       {/* LEFT TEXT AREA */}
-      <div className="space-y-4 max-w-xl">
+      <div className="space-y-4 max-w-xl md:max-w-2xl text-center md:text-left">
 
         {/* 👋 Greeting */}
         <Fade direction="left">
-          <p className="text-lg flex items-center gap-1">
-            Hi <img src={Hello} width="24" alt="wave" />, I'm
+          <p className="text-lg flex items-center gap-1 justify-center md:justify-start">
+            Hi <img src={Hello} width="28" alt="wave" />, I'm
           </p>
         </Fade>
 
         {/* 🧑‍💻 Name */}
         <Slide direction="left">
           <h1
-            className="font-bold tracking-tight"
-            style={{ fontSize: "clamp(2.4rem, 5vw, 3.6rem)" }}
+            className="font-bold leading-tight"
+            style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)" }}
           >
             Muhammad Ayyaz
           </h1>
@@ -44,58 +45,45 @@ export default function Home() {
 
         {/* 💚 Title */}
         <Fade direction="up" delay={200}>
-      <h3 className="text-2xl font-semibold">
-  <TypewriterTransition
-  words={[
-    "Software Engineer",
-    "Full Stack Developer",
-    "MERN Stack Developer",
-    "Database Developer"
-  ]}
-  typeSpeed={120}
-  deleteSpeed={60}
-  waitTime={1500}
-/>
-
-</h3>
+          <h3 className="text-xl sm:text-2xl font-semibold">
+            <TypewriterTransition
+              words={[
+                "Software Engineer",
+                "Full Stack Developer",
+                "MERN Stack Developer",
+                "Database Developer",
+              ]}
+              typeSpeed={120}
+              deleteSpeed={60}
+              waitTime={1500}
+            />
+          </h3>
         </Fade>
 
-        {/* ⏳ Experience */}
-       <Fade direction="up" delay={400}>
-  <p
-    className="opacity-80 mb-8"
-    style={{ fontWeight: 700 }} 
-  >
-    2+ Years Experience
-  </p>
-</Fade>
+        {/* Experience */}
+        <Fade direction="up" delay={400}>
+          <p className="opacity-80 font-bold mb-4">2+ Years Experience</p>
+        </Fade>
 
-
-        {/* ✉️ Contact Button */}
+        {/* Contact Button */}
         <Zoom delay={600}>
           <Link
             to="contact"
             smooth={true}
             duration={500}
-            style={{
-              backgroundColor: "#22CA6E",
-              color: "white",
-              padding: "10px 40px",
-              borderRadius: "9999px",
-              fontWeight: "600",
-              display: "inline-block",
-              fontSize: "1rem",
-              border: "2px solid #22CA6E",
-            }}
-            className="hover:opacity-90 transition-all duration-300 tracking-wide mb-3"
+            className="inline-block px-10 py-3 rounded-full font-semibold 
+                       transition-all duration-300 tracking-wide mb-4
+                       text-white"
+            style={{ backgroundColor: "#22CA6E", border: "2px solid #22CA6E" }}
           >
             Contact
           </Link>
         </Zoom>
 
-        {/* 🌐 Social Links */}
+        {/* Social Links */}
         <Fade direction="up" delay={800}>
-          <div className="flex items-center gap-[0.7rem] mt-6">
+          <div className="flex items-center justify-center md:justify-start gap-4 mt-4">
+
             <a
               href="https://www.linkedin.com/in/muhammad-ayyaz-2614491ba"
               target="_blank"
@@ -104,7 +92,7 @@ export default function Home() {
               <img
                 src={linkedin}
                 alt="Linkedin"
-                className="w-[2.15rem] h-[2.15rem] object-contain"
+                className="w-9 h-9 object-contain"
               />
             </a>
 
@@ -112,7 +100,7 @@ export default function Home() {
               <img
                 src={theme === "dark" ? green_github : github}
                 alt="GitHub"
-                className="w-[2.10rem] h-[2.10rem] object-contain"
+                className="w-9 h-9 object-contain"
               />
             </a>
 
@@ -124,7 +112,7 @@ export default function Home() {
               <img
                 src={whatsapp}
                 alt="Whatsapp"
-                className="w-8 h-8 object-contain"
+                className="w-10 h-10 object-contain"
               />
             </a>
 
@@ -136,23 +124,22 @@ export default function Home() {
               <img
                 src={gmail}
                 alt="gmail"
-                className="w-[1.725rem] h-[1.725rem] object-contain"
+                className="w-7 h-7 object-contain"
               />
             </a>
+
           </div>
         </Fade>
       </div>
 
       {/* RIGHT IMAGE */}
       <Slide direction="right" delay={300}>
-<div className="mt-10 md:mt-0 flex justify-center md:justify-end relative hero-illustration">
+        <div className="mt-10 md:mt-0 flex justify-center md:justify-end relative">
           <img
             src={ayyazImg}
             alt="Developer Illustration"
-            style={{
-              width: "clamp(220px, 28vw, 520px)",
-              height: "auto",
-            }}
+            className="w-[250px] sm:w-[300px] md:w-[360px] lg:w-[430px] xl:w-[440px] 
+                       h-auto object-contain"
           />
         </div>
       </Slide>

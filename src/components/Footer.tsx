@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import react from "../../public/assets/react.svg";
-import github from "../../public/assets/github.svg";
-import green_github from "../../public/assets/green_github.svg";
-import whatsapp from "../../public/assets/whatsapp.svg";
-import linkedin from "../../public/assets/linkedin.svg";
-import gmail from "../../public/assets/gmail.svg";
+import react from "/assets/react.svg";
+import github from "/assets/github.svg";
+import green_github from "/assets/green_github.svg";
+import whatsapp from "/assets/whatsapp.svg";
+import linkedin from "/assets/linkedin.svg";
+import gmail from "/assets/gmail.svg";
 import { useTheme } from '../context/ThemeContext';
 
 export default function Footer() {

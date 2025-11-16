@@ -21,6 +21,7 @@ html.dark {
   --pink: #E31F71;
   --h2-color: #2ae980;
   --h3-color: #2ae980;
+  --skills-bg: #1f2937; /* bg-gray-800 */
 }
 
 html.light {
@@ -29,8 +30,14 @@ html.light {
   --mobile-menu-bg: #F5F5F5;
   --green: #27ae60;
   --pink: #c0392b;
-   --h3-color: #000000;
+  --h3-color: #000000;
+  --skills-bg: #374151; /* bg-gray-700 */
 }
+
+.skills-bg {
+  background-color: var(--skills-bg);
+}
+
 
 
 h2,h3 {
