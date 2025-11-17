@@ -1,6 +1,14 @@
 import React from 'react';
-import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJsSquare, FaAws, FaStripe, FaPaypal } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiRedux, SiTailwindcss, SiPostgresql, SiNextdotjs, SiNestjs, SiBootstrap, SiTypescript, SiGithubactions, SiPostman, SiGooglemaps, SiJsonwebtokens, SiCplusplus, SiVercel, SiMui } from 'react-icons/si';
+import {
+  FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJsSquare, FaAws, FaStripe, FaPaypal
+} from 'react-icons/fa';
+import {
+  SiMongodb, SiExpress, SiRedux, SiTailwindcss, SiPostgresql, SiNextdotjs,
+  SiNestjs, SiBootstrap, SiTypescript, SiGithubactions, SiPostman,
+  SiGooglemaps, SiJsonwebtokens, SiCplusplus, SiVercel, SiMui
+} from 'react-icons/si';
+
+import { Zoom } from "react-awesome-reveal";
 
 const skills = [
   { name: 'MongoDB', icon: <SiMongodb className="text-green-600" /> },
@@ -25,23 +33,32 @@ const skills = [
   { name: 'Postman', icon: <SiPostman className="text-orange-500" /> },
   { name: 'Stripe', icon: <FaStripe className="text-indigo-500" /> },
   { name: 'PayPal', icon: <FaPaypal className="text-blue-600" /> },
-  { name: 'Google Maps API', icon: <SiGooglemaps className="text-green-500" /> },
+  {
+    name: 'Google Map API', icon: <SiGooglemaps className="text-green-500" />,
+  },
   { name: 'JWT/Auth', icon: <SiJsonwebtokens className="text-yellow-500" /> },
 ];
 
 export default function Skills() {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center text-white py-20 px-10">
-      <h2 className="text-4xl font-bold mb-12 border-b-2 border-blue-500 pb-2">Skills</h2>
+      <h2 className="text-3xl font-bold mb-12 border-b-2 border-blue-500 pb-2">Skills</h2>
+
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-5">
-        {skills.map((skill) => (
-          <div
-            key={skill.name}
-            className="flex flex-col items-center justify-center p-3 skills-bg rounded-xl shadow-lg hover:scale-110 transition-transform duration-300"
+        {skills.map((skill, index) => (
+          <Zoom
+            key={index}
+            duration={450}
+            fraction={0.05}    // 👈 triggers immediately when slightly visible
+            damping={0.15}
           >
-            <div className="text-4xl mb-3">{skill.icon}</div>
-            <p className="text-md font-semibold text-center">{skill.name}</p>
-          </div>
+<div
+  className={`flex flex-col items-center justify-center p-3 skills-bg rounded-xl shadow-lg hover:scale-110 transition-transform duration-300`}
+>
+              <div className="text-4xl mb-3">{skill.icon}</div>
+              <p className="text-sm font-semibold text-center">{skill.name}</p>
+            </div>
+          </Zoom>
         ))}
       </div>
     </section>

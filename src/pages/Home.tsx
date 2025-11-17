@@ -62,7 +62,7 @@ export default function Home() {
 
         {/* Experience */}
         <Fade direction="up" delay={400}>
-          <p className="opacity-80 font-bold mb-4">2+ Years Experience</p>
+          <p className="opacity-80 font-bold mb-4 text-var(--website-text-color)">2+ Years Experience</p>
         </Fade>
 
         {/* Contact Button */}
@@ -73,7 +73,7 @@ export default function Home() {
             duration={500}
             className="inline-block px-10 py-3 rounded-full font-semibold 
                        transition-all duration-300 tracking-wide mb-4
-                       text-white"
+                       text-white cursor-pointer"
             style={{ backgroundColor: "#22CA6E", border: "2px solid #22CA6E" }}
           >
             Contact
@@ -112,7 +112,7 @@ export default function Home() {
               <img
                 src={whatsapp}
                 alt="Whatsapp"
-                className="w-10 h-10 object-contain"
+                className="w-9 h-9 object-contain"
               />
             </a>
 
