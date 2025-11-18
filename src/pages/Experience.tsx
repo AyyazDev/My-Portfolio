@@ -1,4 +1,6 @@
 import React from "react";
+import { Fade } from "react-awesome-reveal";
+
 
 const experiences = [
   {
@@ -29,22 +31,22 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section className="min-h-screen py-10 px-10 lg:px-32" >
+    <section className="min-h-screen py-10 px-10 lg:px-24 text-[1.2rem]" >
       <div className="text-center">
         <h2 className="text-3xl font-bold mb-12 text-center 
         border-b-2 border-blue-500 pb-2 inline-block">
           Experience
         </h2>
       </div>
-
-      <div className="space-y-12">
+<Fade direction="left" delay={200}>
+      <div className="space-y-14">
         {experiences.map((exp, idx) => (
           <div key={idx} className="flex flex-col lg:flex-row lg:items-start lg:space-x-8">
             
             {/* Left side */}
-            <div className="lg:w-1/4 w-full mb-4 lg:mb-0">
+            <div className="lg:w-1/4 w-full mb-6 lg:mb-0">
               <h3 className="text-xl font-semibold 
-               transition-colors duration-300">
+               transition-colors duration-100">
                 {exp.role}
               </h3>
 
@@ -61,11 +63,11 @@ export default function Experience() {
 
             {/* Right side */}
             <div className="lg:w-3/4 w-full">
-              <ul className="list-disc list-inside space-y-2">
+              <ul className="list-disc list-inside space-y-4">
                 {exp.details.map((point, pidx) => (
                   <li
                     key={pidx}
-                    className="text-var(--website-text-color) transition-colors duration-300"
+                    className="text-var(--website-text-color) transition-colors duration-100"
                   >
                     {point}
                   </li>
@@ -76,6 +78,7 @@ export default function Experience() {
           </div>
         ))}
       </div>
+      </Fade>
     </section>
   );
 }

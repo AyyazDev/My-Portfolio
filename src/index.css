@@ -38,7 +38,13 @@ html.light {
   background-color: var(--skills-bg);
 }
 
+.project-title{
+  color: #23ce6b;
+}
 
+.link-hover:hover {
+  color: #23ce6b;
+}
 
 h2,h3 {
   color: var(--h3-color);
