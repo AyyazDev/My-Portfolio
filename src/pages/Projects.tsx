@@ -6,29 +6,29 @@ const projects = [
   {
     title: "BLU Transfer",
     description:
-      "Full-stack MERN application with cart, payments, and admin panel.",
-    tech: ["ReactJS", "NodeJS", "ExpressJS", "MongoDB", "AWS", "Stripe/Paypal"],
+      "A Chauffeur service platform delivering seamless bookings, secure payments, driver & admin dashboards with geofenced routes & pricing etc",
+    tech: ["ReactJS", "NodeJS", "ExpressJS", "MongoDB", "AWS", "Stripe/Paypal", "GMap API"],
     image: "/assets/BLU_Img.png", 
     demoLink: "https://blu.taxi",
   },
   {
     title: "Pharmacy Solutions",
-    description: "Modern portfolio built with React + Tailwind.",
-    tech: ["ReactJS", "NestJS", "PosgreSQL", "TypeORM", "Typescript", "MaterialUI", ],
+    description: "A Pharmacy management system where admin, pharmacist, contractor, & DEO roles can manage prescriptions & their invoicing under NHS regulations.",
+    tech: ["ReactJS", "NestJS", "PosgreSQL", "TypeORM", "Typescript", "MaterialUI", "Nodemailer"],
     image: "/assets/Pharmacy_Sol_Img.png",
     demoLink: "https://app.pharmacy-solutions.co.uk/",
   },
   {
     title: "RALCO Construction",
-    description: "End-to-end booking and invoice generation system.",
-    tech: ["NextJS", "NestJS", "PosgreSQL", "Tailwind", "CI/CD", "i18N"],
+    description: "A platform with admin, foreman, & worker panels to handle workforce assignment, job scheduling, progress tracking for streamlined site management.",
+    tech: ["NextJS", "NestJS", "PosgreSQL", "Tailwind", "Github CI/CD", "i18N", "Formik"],
     image: "/assets/RALCO_Constructions_Img.png",
     demoLink: "https://app.ralco.io/",
   },
    {
     title: "HR 360°",
-    description: "End-to-end booking and invoice generation system.",
-    tech: ["ReactJS", "NodeJS", "ExpressJS", "MongoDB", "Redux" , "JWT Auth"],
+    description: "HR platform with admin, client & employee panels, where admin can manage employees, payroll, attendance, events, feedback, & company activities.",
+    tech: ["ReactJS", "NodeJS", "ExpressJS", "MongoDB", "Redux" , "JWT Auth", "Vercel"],
     image: "/assets/HR360_Img.png",
     demoLink: "https://hr360.vercel.app/",
   },
@@ -41,14 +41,14 @@ export default function Projects() {
         Projects
       </h2>
 
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-332 px-10 lg:px-0">
         {projects.map((project, index) => (
           <div
             key={index}
             className="bg-[#111] p-6 rounded-xl shadow-xl skills-bg border border-gray-700 hover:border-blue-400 transition-all flex flex-col items-center"
           >
             {/* Project Image */}
-            <div className="w-72 h-36 rounded-xl overflow-hidden mb-4">
+            <div className="w-70 lg:w-90 h-45 rounded-xl overflow-hidden mb-4">
               <img
                 src={project.image}
                 alt={project.title}
@@ -72,7 +72,7 @@ export default function Projects() {
     </a>
   )}
 
-            <p className="text-gray-300 mb-4 text-center">{project.description}</p>
+            <p className="text-gray-300 mb-8 mt-2 text-center">{project.description}</p>
 
             {/* Tech Stack */}
             <div className="flex flex-wrap justify-center gap-2 mb-2">

@@ -41,10 +41,10 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center text-white py-20 px-10">
+    <section className="min-h-screen flex flex-col items-center justify-center text-white py-20 px-0">
       <h2 className="text-3xl font-bold mb-12 border-b-2 border-blue-500 pb-2">Skills</h2>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-5">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-7">
         {skills.map((skill, index) => (
           <Zoom
             key={index}
@@ -53,7 +53,7 @@ export default function Skills() {
             damping={0.15}
           >
 <div
-  className={`flex flex-col items-center justify-center p-3 skills-bg rounded-xl shadow-lg hover:scale-110 transition-transform duration-300`}
+  className={`flex flex-col items-center justify-center p-5 skills-bg rounded-xl shadow-lg hover:scale-110 transition-transform duration-300`}
 >
               <div className="text-4xl mb-3">{skill.icon}</div>
               <p className="text-sm font-semibold text-center">{skill.name}</p>
