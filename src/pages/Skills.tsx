@@ -44,7 +44,7 @@ export default function Skills() {
     <section className="min-h-screen flex flex-col items-center justify-center text-white py-20 px-0">
       <h2 className="text-3xl font-bold mb-12 border-b-2 border-blue-500 pb-2">Skills</h2>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-7">
+<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-8 gap-7 xl:p-10">
         {skills.map((skill, index) => (
           <Zoom
             key={index}

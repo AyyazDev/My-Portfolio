@@ -203,3 +203,56 @@ h2,h3 {
     min-height: 70vh; /* for 1366px and above */
   }
 }
+
+
+@layer utilities {
+  /* 100% ZOOM (2xl normal) */
+  @media (min-width: 1536px) and (min-resolution: 96dpi) {
+    .zoom-100\:2xl\:text-6xl {
+      font-size: 6rem;
+    }
+    .zoom-100\:2xl\:space-y-28 {
+      margin-top: 7rem;
+      margin-bottom: 7rem;
+    }
+  }
+
+  /* 125% ZOOM (2xl behaving like lg) */
+  @media (min-width: 1024px) and (min-resolution: 120dpi) {
+    /* Text sizes */
+    .zoom-125\:lg\:text-lg {
+      font-size: 1.125rem; /* Tailwind lg */
+      line-height: 1.75rem;
+    }
+
+    .zoom-125\:lg\:text-xl {
+      font-size: 1.25rem; /* Tailwind xl */
+      line-height: 1.75rem;
+    }
+
+    .zoom-125\:lg\:text-2xl {
+      font-size: 1.5rem; /* Tailwind 2xl */
+      line-height: 2rem;
+    }
+
+    .zoom-125\:lg\:text-3xl {
+      font-size: 1.875rem; /* Tailwind 3xl */
+      line-height: 2.25rem;
+    }
+
+    .zoom-125\:lg\:text-6xl {
+      font-size: 3.75rem; /* Tailwind 6xl reduced for 125% zoom */
+      line-height: 1;
+    }
+
+    /* Padding/margins */
+    .zoom-125\:lg\:p-10 {
+      padding: 2.5rem; /* Tailwind p-10 */
+    }
+
+    .zoom-125\:lg\:space-y-28 {
+      margin-top: 7rem;
+      margin-bottom: 7rem;
+    }
+  }
+}
