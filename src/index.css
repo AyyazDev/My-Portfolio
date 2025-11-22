@@ -256,3 +256,49 @@ h2,h3 {
     }
   }
 }
+
+
+/* 🔥 Animated Moving Border */
+.animated-border {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.animated-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    #3b82f6,
+    #06b6d4,
+    #9333ea,
+    #3b82f6
+  );
+  background-size: 300% 300%;
+  animation: animate-border 6s ease infinite;
+  z-index: 0;
+}
+
+.animated-border > div {
+  position: relative;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+/* 🔄 Border movement */
+@keyframes animate-border {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+

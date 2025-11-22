@@ -1,19 +1,20 @@
 import React from "react";
 import { FiExternalLink } from "react-icons/fi";
 import "../index.css"; // this must include Tailwind directives
+import { Zoom } from "react-awesome-reveal";
 
 const projects = [
   {
     title: "BLU Transfer",
     description:
-      "A Chauffeur service platform delivering seamless bookings, secure payments, driver & admin dashboards with geofenced routes & pricing etc",
+      "A chauffeur service platform delivering seamless bookings, secure payments, driver & admin dashboards with geofenced routes & pricing etc",
     tech: ["ReactJS", "NodeJS", "ExpressJS", "MongoDB", "AWS", "Stripe/Paypal", "GMap API"],
     image: "/assets/BLU_Img.png", 
     demoLink: "https://blu.taxi",
   },
   {
     title: "Pharmacy Solutions",
-    description: "A Pharmacy management system where admin, pharmacist, contractor, & DEO roles can manage prescriptions & their invoicing under NHS regulations.",
+    description: "A pharmacy management system where admin, pharmacist, contractor, & DEO roles can manage prescriptions & their invoicing under NHS regulations.",
     tech: ["ReactJS", "NestJS", "PosgreSQL", "TypeORM", "Typescript", "MaterialUI", "Nodemailer"],
     image: "/assets/Pharmacy_Sol_Img.png",
     demoLink: "https://app.pharmacy-solutions.co.uk/",
@@ -43,9 +44,16 @@ export default function Projects() {
 
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-332 px-10 lg:px-0">
         {projects.map((project, index) => (
+          <Zoom
+                               key={index}
+                               duration={450}
+                               fraction={0.05}    // 👈 triggers immediately when slightly visible
+                               damping={0.15}
+                             >
+           <div className="animated-border rounded-xl p-0.5">
           <div
             key={index}
-            className="bg-[#111] p-6 rounded-xl shadow-xl skills-bg border border-gray-700 hover:border-blue-400 transition-all flex flex-col items-center"
+            className="bg-[#111] p-6 rounded-xl shadow-xl skills-bg border border-gray-700 transition-all flex flex-col items-center"
           >
             {/* Project Image */}
             <div className="w-70 lg:w-90 h-45 rounded-xl overflow-hidden mb-4">
@@ -86,6 +94,8 @@ export default function Projects() {
               ))}
             </div>
           </div>
+          </div>
+          </Zoom>
         ))}
       </div>
     </section>
