@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
-import Resume from "/assets/Muhammad Ayyaz Resume.pdf";
 import { useTheme } from "../context/ThemeContext";
 import Switch from "@mui/material/Switch";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import "../index.css";
+import { HiDownload } from "react-icons/hi";
 
 export default function Header() {
+  const Resume = "/assets/Muhammad-Ayyaz-Resume.pdf";
+
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -69,16 +71,18 @@ export default function Header() {
 
           {/* Resume Button */}
           <a
-            href={Resume}
-            download
-            className="
-              bg-[#22CA6E] text-white px-4 py-2 rounded-full
-              font-semibold border-2 border-[#22CA6E]
-              hover:opacity-90 transition-all duration-300
-            "
-          >
-            RESUME
-          </a>
+  href={Resume}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    bg-[#22CA6E] text-white px-4 py-2 rounded-full
+    font-semibold border-2 border-[#22CA6E]
+    hover:opacity-90 transition-all duration-300
+    flex items-center gap-2
+  "
+>
+  RESUME <HiDownload size={20} />
+</a>
         </nav>
 
         {/* ===== MOBILE RIGHT SECTION ===== */}
@@ -143,16 +147,18 @@ export default function Header() {
             ))}
 
             <a
-              href={Resume}
-              download
-              className="
-                bg-[#22CA6E] text-white px-6 py-2 rounded-full
-                font-semibold border-2 border-[#22CA6E]
-                hover:opacity-90 text-xl
-              "
-            >
-              RESUME
-            </a>
+  href={Resume}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    bg-[#22CA6E] text-white px-6 py-2 rounded-full
+    font-semibold border-2 border-[#22CA6E]
+    hover:opacity-90 text-xl flex items-center gap-2 whitespace-nowrap
+  "
+>
+  RESUME <HiDownload size={20} />
+</a>
+
           </div>
         </div>
       )}
