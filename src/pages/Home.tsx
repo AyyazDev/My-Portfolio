@@ -51,7 +51,9 @@ export default function Home() {
                 "Software Engineer",
                 "Full Stack Developer",
                 "MERN Stack Developer",
-                "Database Developer",
+                "Frontend Developer",
+                "Backend Developer",
+                "API Integration Expert",
               ]}
               typeSpeed={120}
               deleteSpeed={60}

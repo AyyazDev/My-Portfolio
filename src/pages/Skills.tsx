@@ -12,10 +12,10 @@ import { Zoom } from "react-awesome-reveal";
 
 const skills = [
   { name: 'MongoDB', icon: <SiMongodb className="text-green-600" /> },
-  { name: 'Express', icon: <SiExpress className="text-gray-300" /> },
-  { name: 'React', icon: <FaReact className="text-blue-400" /> },
-  { name: 'Node.js', icon: <FaNodeJs className="text-green-500" /> },
-  { name: 'Next.js', icon: <SiNextdotjs className="text-white" /> },
+  { name: 'ExpressJS', icon: <SiExpress className="text-gray-300" /> },
+  { name: 'ReactJS', icon: <FaReact className="text-blue-400" /> },
+  { name: 'NodeJS', icon: <FaNodeJs className="text-green-500" /> },
+  { name: 'NextJS', icon: <SiNextdotjs className="text-white" /> },
   { name: 'NestJS', icon: <SiNestjs className="text-red-600" /> },
   { name: 'PostgreSQL', icon: <SiPostgresql className="text-indigo-400" /> },
   { name: 'Redux', icon: <SiRedux className="text-purple-600" /> },
@@ -42,9 +42,9 @@ const skills = [
 export default function Skills() {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center text-white py-20 px-0">
-      <h2 className="text-3xl font-bold mb-12 border-b-2 border-blue-500 pb-2">Skills</h2>
+      <h2 className="text-3xl font-bold mb-6 border-b-2 border-blue-500 pb-2">Skills</h2>
 
-<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-8 gap-7 xl:p-10">
+<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-8 gap-4 xl:p-10">
         {skills.map((skill, index) => (
           <Zoom
             key={index}

@@ -20,39 +20,30 @@ export default function Header() {
   return (
     <>
       {/* ======== FIXED TOP HEADER ======== */}
-      <header
-        className="
-          fixed top-0 left-0 w-full z-50
-          backdrop-blur-md bg-black/10
-          flex items-center justify-between
-          px-4 sm:px-6 md:px-10 xl:px-20
-          h-20 md:h-20
-        "
-      >
-        {/* LOGO */}
-        <Link
-          to="/"
-          className="text-[1.8rem] md:text-[2.2rem] no-underline text-(--website-text-color) cursor-pointer"
-        >
-          {"< M. Ayyaz />"}
-        </Link>
+<header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/10 flex items-center justify-between px-4 sm:px-6 md:px-10 xl:px-20 h-20 md:h-20">
+  {/* LOGO */}
+  <Link
+    to="/"
+    className="text-[1.8rem] md:text-[2.2rem] no-underline text-(--website-text-color) cursor-pointer flex items-center whitespace-nowrap mr-4"
+  >
+    {"< M. Ayyaz />"}
+  </Link>
 
-        {/* ===== DESKTOP NAV (lg and up) ===== */}
-        <nav className="hidden lg:flex items-center gap-10">
-          <Switch
-            checked={theme === "dark"}
-            onChange={toggleTheme}
-            sx={{
-              transform: "scale(1.25)",
-              "& .MuiSwitch-thumb": { backgroundColor: "white" },
-              "& .MuiSwitch-track": {
-                backgroundColor: `${
-                  theme === "dark" ? "#23ce6b" : "#E31F71"
-                } !important`,
-                opacity: "1 !important",
-              },
-            }}
-          />
+  {/* DESKTOP NAV (lg and up) */}
+  <nav className="hidden lg:flex items-center gap-10">
+    {/* Add margin to create space */}
+    <Switch
+      checked={theme === "dark"}
+      onChange={toggleTheme}
+      sx={{
+        transform: "scale(1.25)",
+        "& .MuiSwitch-thumb": { backgroundColor: "white" },
+        "& .MuiSwitch-track": {
+          backgroundColor: `${theme === "dark" ? "#23ce6b" : "#E31F71"} !important`,
+          opacity: "1 !important",
+        },
+      }}
+    />
 
           {/* Navigation Links */}
           {Links.map((item) => (
