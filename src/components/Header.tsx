@@ -71,7 +71,7 @@ export default function Header() {
 
           {/* Resume Button */}
           <a
-  href={Resume}
+   href={`https://docs.google.com/viewer?url=https://muhammad-ayyaz.vercel.app/assets/Muhammad-Ayyaz-Resume.pdf`}
   target="_blank"
   rel="noopener noreferrer"
   className="
@@ -147,7 +147,7 @@ export default function Header() {
             ))}
 
             <a
-  href={Resume}
+   href={`https://docs.google.com/viewer?url=https://muhammad-ayyaz.vercel.app/assets/Muhammad-Ayyaz-Resume.pdf`}
   target="_blank"
   rel="noopener noreferrer"
   className="
