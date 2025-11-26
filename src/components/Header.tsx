@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
+import Resume from "/assets/Muhammad Ayyaz Resume.pdf";
 import { useTheme } from "../context/ThemeContext";
 import Switch from "@mui/material/Switch";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -8,8 +9,6 @@ import "../index.css";
 import { HiDownload } from "react-icons/hi";
 
 export default function Header() {
-  const Resume = "/assets/Muhammad-Ayyaz-Resume.pdf";
-
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -71,9 +70,8 @@ export default function Header() {
 
           {/* Resume Button */}
           <a
-   href={`https://docs.google.com/viewer?url=https://muhammad-ayyaz.vercel.app/assets/Muhammad-Ayyaz-Resume.pdf`}
-  target="_blank"
-  rel="noopener noreferrer"
+  href={Resume}
+  download
   className="
     bg-[#22CA6E] text-white px-4 py-2 rounded-full
     font-semibold border-2 border-[#22CA6E]
@@ -147,18 +145,16 @@ export default function Header() {
             ))}
 
             <a
-   href={`https://docs.google.com/viewer?url=https://muhammad-ayyaz.vercel.app/assets/Muhammad-Ayyaz-Resume.pdf`}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="
-    bg-[#22CA6E] text-white px-6 py-2 rounded-full
-    font-semibold border-2 border-[#22CA6E]
-    hover:opacity-90 text-xl flex items-center gap-2 whitespace-nowrap
-  "
->
-  RESUME <HiDownload size={20} />
-</a>
-
+              href={Resume}
+              download
+              className="
+                bg-[#22CA6E] text-white px-6 py-2 rounded-full
+                font-semibold border-2 border-[#22CA6E]
+                hover:opacity-90 text-xl   flex items-center gap-2 whitespace-nowrap
+              "
+            >
+              RESUME               <HiDownload size={20} />
+            </a>
           </div>
         </div>
       )}
