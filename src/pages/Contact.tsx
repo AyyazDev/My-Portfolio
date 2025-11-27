@@ -1,5 +1,6 @@
 import { Zoom } from "react-awesome-reveal";
 import { useState } from "react";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 export default function Contact() {
   const [formStatus, setFormStatus] = useState("");
@@ -109,6 +110,8 @@ export default function Contact() {
           </Zoom>
         </div>
       </div>
+      <ScrollToTopButton />
+
     </section>
   );
 }
