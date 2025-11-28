@@ -1,45 +1,58 @@
 import { useEffect, useState } from "react";
 import { FaArrowUp } from "react-icons/fa";
-import { useTheme } from "../context/ThemeContext"; // If using next-themes for dark mode
+import { useTheme } from "../context/ThemeContext";
 
 export default function ScrollToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
-  const { theme } = useTheme(); // detects light/dark mode
-  
+  const [bottomSpacing, setBottomSpacing] = useState(24);
+  const { theme } = useTheme();
+
   useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.scrollY > 300) setIsVisible(true);
-      else setIsVisible(false);
+    const handleScroll = () => {
+      setIsVisible(window.scrollY > 300);
+
+      const footer = document.querySelector("footer");
+      if (footer) {
+        const footerRect = footer.getBoundingClientRect();
+
+        // How much footer is overlapping the screen
+        const overlap = window.innerHeight - footerRect.top;
+
+        if (overlap > 0) {
+          // Footer visible → move button up
+          setBottomSpacing(overlap + 20);
+        } else {
+          // Footer not visible → default position
+          setBottomSpacing(24);
+        }
+      }
     };
 
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const isDark = theme === "dark";
+  if (!isVisible) return null;
 
   return (
-    <>
-      {isVisible && (
-        <button
-          onClick={scrollToTop}
-          className={`
-            fixed bottom-6 right-6 z-50
-            w-14 h-14 flex items-center justify-center rounded-full shadow-lg
-            transition-all duration-300 hover:scale-110
-          `}
-          style={{
-            backgroundColor: isDark ? "#22CA6E" : "#000000",
-            color: isDark ? "#000000" : "#22CA6E",
-          }}
-        >
-          <FaArrowUp size={22} />
-        </button>
-      )}
-    </>
+    <button
+      onClick={scrollToTop}
+      className="
+        fixed right-6 z-[999]
+        w-14 h-14 flex items-center justify-center rounded-full shadow-xl
+        transition-all duration-300 hover:scale-110
+      "
+      style={{
+        bottom: bottomSpacing,
+        backgroundColor: "#22CA6E",
+        color: "#000000",
+      }}
+    >
+      <FaArrowUp size={22} />
+    </button>
   );
 }

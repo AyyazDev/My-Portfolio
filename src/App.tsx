@@ -3,8 +3,12 @@ import { loadSlim } from "tsparticles-slim";
 import { useCallback, useMemo } from "react";
 import { Engine } from "tsparticles-engine";
 import { getShuffledIcons } from './utils/iconAssets';
-import { BrowserRouter as Router } from 'react-router-dom';
-import { ThemeProvider, useTheme } from './context/ThemeContext';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";import { ThemeProvider, useTheme } from './context/ThemeContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { Analytics } from "@vercel/analytics/react";
@@ -56,7 +60,13 @@ export default function App() {
           </div>
 
           <main className="pt-28 relative z-10">
-            <Main />
+             <Routes>
+              {/* Home */}
+              <Route path="/" element={<Main />} />
+
+              {/* Redirect all incorrect URLs */}
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
           </main>
 
           <Footer />
