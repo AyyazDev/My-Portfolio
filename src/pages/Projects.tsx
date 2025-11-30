@@ -7,14 +7,14 @@ const projects = [
   {
     title: "BLU Transfer",
     description:
-      "A chauffeur service platform delivering seamless bookings, secure payments, driver & admin dashboards with geofenced routes & pricing etc",
+      "A chauffeur service platform delivering seamless bookings, secure payments, driver & admin dashboards with geofenced routes & pricing etc.",
     tech: ["ReactJS", "NodeJS", "ExpressJS", "MongoDB", "AWS", "Stripe/Paypal", "GMap API"],
     image: "/assets/BLU_Img.png", 
     demoLink: "https://blu.taxi",
   },
   {
     title: "Pharmacy Solutions",
-    description: "A pharmacy management system where admin, pharmacist, contractor, & DEO roles can manage prescriptions & their invoicing under NHS regulations.",
+    description: "A pharmacy management system where admin, pharmacist, contractor, & DEO roles manage prescriptions & invoicing under NHS regulations.",
     tech: ["ReactJS", "NestJS", "PosgreSQL", "TypeORM", "Typescript", "MaterialUI", "Nodemailer"],
     image: "/assets/Pharmacy_Sol_Img.png",
     demoLink: "https://app.pharmacy-solutions.co.uk/",
@@ -37,12 +37,12 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="flex flex-col items-center justify-center text-white py-24 px-0">
+    <section className="flex flex-col items-center justify-center text-white py-24 px-0 xl:px-12 2xl:px-4">
       <h2 className="text-3xl font-bold mb-12 border-b-2 border-blue-500 pb-2">
         Projects
       </h2>
 
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-332 px-10 lg:px-0">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-332 px-10 lg:px-3">
         {projects.map((project, index) => (
           <Zoom
                                key={index}

@@ -44,7 +44,8 @@ export default function Skills() {
     <section className="min-h-screen flex flex-col items-center justify-center text-white py-20 px-0">
       <h2 className="text-3xl font-bold mb-6 border-b-2 border-blue-500 pb-2">Skills</h2>
 
-<div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8 gap-6 xl:gap-9 2xl:gap-6 xl:p-10">
+<div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-8 gap-6 xl:gap-9 zoom-100:2xl:gap-8
+    zoom-125:2xl:gap-6 xl:p-10">
         {skills.map((skill, index) => (
           <Zoom
             key={index}
@@ -53,7 +54,8 @@ export default function Skills() {
             damping={0.15}
           >
 <div
-  className={`flex flex-col items-center justify-center p-5 xl:p-6 2xl:p-10 zoom-125:2xl:p-5 skills-bg rounded-xl shadow-lg hover:scale-110 transition-transform duration-300`}
+  className={`flex flex-col items-center justify-center p-5 xl:p-6 2xl:p-10  zoom-100:2xl:p-10
+    zoom-125:2xl:p-5 skills-bg rounded-xl shadow-lg hover:scale-110 transition-transform duration-300`}
 >
               <div className="text-4xl mb-3">{skill.icon}</div>
               <p className="text-sm font-semibold text-center">{skill.name}</p>

@@ -215,13 +215,25 @@ h2,h3 {
       margin-top: 7rem;
       margin-bottom: 7rem;
     }
+     .zoom-100\:2xl\:p-10 {
+      padding: 2.5rem; /* p-10 */
+    }
+     .zoom-100\:2xl\:gap-8 {
+      gap: 2rem; /* Tailwind gap-8 */
+    }
   }
 
   /* 125% ZOOM (2xl behaving like lg) */
   @media (min-width: 1024px) and (min-resolution: 120dpi) {
+     .zoom-125\:2xl\:p-5 {
+      padding: 1.25rem; /* p-5 */
+    }
+    .zoom-125\:2xl\:gap-6 {
+      gap: 1.5rem; /* Tailwind gap-6 */
+    }
     /* Text sizes */
     .zoom-125\:lg\:text-lg {
-      font-size: 1.125rem; /* Tailwind lg */
+      font-size: 1rem; /* Tailwind lg */
       line-height: 1.75rem;
     }
 
@@ -253,9 +265,6 @@ h2,h3 {
     .zoom-125\:lg\:space-y-28 {
       margin-top: 7rem;
       margin-bottom: 7rem;
-    }
-        .zoom-125\:2xl\:p-5 {
-      padding: 1.3rem; /* Tailwind p-10 */
     }
   }
 }

@@ -30,9 +30,9 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section className="min-h-screen py-10 px-10 lg:px-24 text-[1.2rem] 2xl:py-20 2xl:px-28 zoom-125:lg:text-[4.8rem]">
+    <section className="min-h-screen py-10 px-10 lg:px-24 text-[1.2rem] 2xl:py-20 2xl:px-27 zoom-100:2xl:text-[6.4rem] zoom-125:lg:text-[4.8rem]">
       <div className="text-center">
-        <h2 className="text-3xl 2xl:text-5xl zoom-125:lg:text-3xl font-bold mb-12 2xl:mb-24 text-center border-b-2 border-blue-500 pb-2 inline-block">
+        <h2 className="text-3xl 2xl:text-3xl zoom-125:lg:text-3xl font-bold mb-12 2xl:mb-24 text-center border-b-2 border-blue-500 pb-2 inline-block">
           Experience
         </h2>
       </div>
@@ -46,10 +46,10 @@ export default function Experience() {
                 <h3 className="text-xl 2xl:text-3xl zoom-125:lg:text-2xl font-semibold transition-colors duration-100">
       {exp.role}
     </h3>
-    <p className="text-lg 2xl:text-3xl zoom-125:lg:text-2xl font-medium text-var(--website-text-color) transition-colors duration-100">
+    <p className="text-lg 2xl:text-2xl zoom-125:lg:text-xl font-medium text-var(--website-text-color) transition-colors duration-100">
       {exp.company}
     </p>
-    <p className="mt-1 text-sm 2xl:text-xl zoom-125:lg:text-lg font-medium text-var(--website-text-color) transition-colors duration-100">
+    <p className="mt-1 text-sm 2xl:text-lg zoom-125:lg:text-lg font-medium text-var(--website-text-color) transition-colors duration-100">
       {exp.period}
     </p>
               </div>
@@ -60,7 +60,7 @@ export default function Experience() {
                   {exp.details.map((point, pidx) => (
                     <li
                       key={pidx}
-                      className="text-var(--website-text-color) transition-colors duration-100 xl:text-lg 2xl:text-3xl zoom-125:lg:text-xl"
+                      className="text-var(--website-text-color) transition-colors duration-100 xl:text-lg 2xl:text-2xl zoom-125:lg:text-xl"
                     >
                       {point}
                     </li>
