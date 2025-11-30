@@ -91,7 +91,7 @@ export default function Contact() {
                     placeholder="Write Your Message"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="w-full p-3 rounded-md bg-[#111] border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-400 resize-y min-h-[calc(1.5rem*3)] max-h-[calc(1.5rem*10)]"
+                    className="w-full p-3 rounded-md bg-[#111] border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-400 resize-y min-h-[calc(1.5rem*3)] max-h-60"
                   ></textarea>
 
                   <button

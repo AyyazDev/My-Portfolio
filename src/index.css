@@ -254,6 +254,9 @@ h2,h3 {
       margin-top: 7rem;
       margin-bottom: 7rem;
     }
+        .zoom-125\:2xl\:p-5 {
+      padding: 1.3rem; /* Tailwind p-10 */
+    }
   }
 }
 
