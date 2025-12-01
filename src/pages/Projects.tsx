@@ -38,11 +38,22 @@ const projects = [
 export default function Projects() {
   return (
     <section className="flex flex-col items-center justify-center text-white py-24 px-0 xl:px-12 2xl:px-4">
-      <h2 className="text-3xl font-bold mb-12 border-b-2 border-blue-500 pb-2">
+      <h2 className="text-3xl font-bold mb-16 border-b-2 border-blue-500 pb-2">
         Projects
       </h2>
 
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-332 px-10 lg:px-3">
+<div className="w-full flex justify-center">
+ <div
+    className="
+      grid 
+      grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 
+      gap-6
+      px-8
+      zoom-100:proj-container zoom-100:proj-grid
+      zoom-125:proj-container zoom-125:proj-grid
+    "
+  >
+
         {projects.map((project, index) => (
           <Zoom
                                key={index}
@@ -98,6 +109,7 @@ export default function Projects() {
           </Zoom>
         ))}
       </div>
+         </div>
     </section>
   );
 }

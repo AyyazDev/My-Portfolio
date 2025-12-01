@@ -221,10 +221,54 @@ h2,h3 {
      .zoom-100\:2xl\:gap-8 {
       gap: 2rem; /* Tailwind gap-8 */
     }
+
+   .zoom-100\:proj-container {
+      max-width: 1900px;       /* slightly smaller than screen width like Education/Contact */
+      width: 100%;
+      padding-left: 6rem;    /* px-26 */
+      padding-right: 6rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .zoom-100\:proj-grid {
+      grid-template-columns: repeat(3, 1fr); /* force 3 columns */
+      gap: 2rem;  /* same as Contact/Education */
+    }
+      .zoom-100\:edu-container {
+      max-width: 1800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .zoom-100\:edu-grid {
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)) !important;
+      gap: 2rem !important;
+    }
+     .zoom-100\:wide-card {
+      max-width: 1900px; /* Increase width here */
+    }
+
+    .zoom-100\:wide-min {
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); /* wider cards */
+    }
   }
 
   /* 125% ZOOM (2xl behaving like lg) */
   @media (min-width: 1024px) and (min-resolution: 120dpi) {
+      .zoom-125\:proj-container {
+      max-width: 1300px;       /* same as your request */
+      width: 100%;
+      padding-left: 0;          /* px-0 */
+      padding-right: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .zoom-125\:proj-grid {
+      grid-template-columns: repeat(3, 1fr); /* still 3 columns */
+      gap: 1.5rem;  /* slightly smaller gap like previous zoom-125 styles */
+    }
      .zoom-125\:2xl\:p-5 {
       padding: 1.25rem; /* p-5 */
     }

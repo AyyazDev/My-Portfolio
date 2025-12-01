@@ -32,7 +32,7 @@ export default function Experience() {
   return (
     <section className="min-h-screen py-10 px-10 lg:px-24 text-[1.2rem] 2xl:py-20 2xl:px-27 zoom-100:2xl:text-[6.4rem] zoom-125:lg:text-[4.8rem]">
       <div className="text-center">
-        <h2 className="text-3xl 2xl:text-3xl zoom-125:lg:text-3xl font-bold mb-12 2xl:mb-24 text-center border-b-2 border-blue-500 pb-2 inline-block">
+        <h2 className="text-3xl 2xl:text-3xl zoom-125:lg:text-3xl font-bold mb-16 2xl:mb-16 text-center border-b-2 border-blue-500 pb-2 inline-block">
           Experience
         </h2>
       </div>

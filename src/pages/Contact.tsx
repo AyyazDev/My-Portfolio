@@ -53,13 +53,13 @@ export default function Contact() {
   return (
     <section className="flex flex-col items-center justify-center text-white py-22 px-4">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold mb-3 2xl:mb-12 border-b-2 border-blue-500 pb-2 inline-block">
+        <h2 className="text-3xl font-bold mb-3 2xl:mb-4 border-b-2 border-blue-500 pb-2 inline-block">
           Contact
         </h2>
       </div>
 
       <div className="w-full flex justify-center">
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 justify-center max-w-[1600px] w-full px-4 lg:px-23">
+<div className="grid zoom-100:wide-card zoom-100:wide-min grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 justify-center max-w-[1600px] w-full px-4 lg:px-23">
           <Zoom duration={450} fraction={0.05} damping={0.15}>
             <div className="animated-border rounded-xl p-0.5">
               <div className="flex flex-col items-center justify-center p-6 skills-bg rounded-xl shadow-lg w-full">
