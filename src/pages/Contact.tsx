@@ -76,7 +76,7 @@ export default function Contact() {
                     placeholder="Your Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full p-3 rounded-md bg-[#111] border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-400"
+                    className="w-full p-3 rounded-md bg-[#11111194] border border-gray-700 text-white placeholder-gray-300 focus:outline-none focus:border-blue-400"
                   />
                   <input
                     type="email"
@@ -84,14 +84,14 @@ export default function Contact() {
                     placeholder="Your Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full p-3 rounded-md bg-[#111] border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-400"
+                    className="w-full p-3 rounded-md bg-[#11111194] border border-gray-700 text-white placeholder-gray-300 focus:outline-none focus:border-blue-400"
                   />
                   <textarea
                     name="message"
                     placeholder="Write Your Message"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="w-full p-3 rounded-md bg-[#111] border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:border-blue-400 resize-y min-h-[calc(1.5rem*3)] max-h-60"
+                    className="w-full p-3 rounded-md bg-[#11111194] border border-gray-700 text-white placeholder-gray-300 focus:outline-none focus:border-blue-400 resize-y min-h-[calc(1.5rem*3)] max-h-60"
                   ></textarea>
 
                   <button
