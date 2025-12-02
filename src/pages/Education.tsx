@@ -36,7 +36,7 @@ export default function Education() {
       grid 
       grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 
       gap-6 justify-items-stretch
-      max-w-[1600px] w-full px-4
+      max-w-[1600px] w-full px-4 md:px-8 lg:px-8
       zoom-100:edu-container zoom-100:edu-grid
     "
   >

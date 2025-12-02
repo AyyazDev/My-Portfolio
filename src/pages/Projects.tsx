@@ -42,74 +42,71 @@ export default function Projects() {
         Projects
       </h2>
 
-<div className="w-full flex justify-center">
- <div
+      <div className="w-full flex justify-center">
+       <div
     className="
       grid 
       grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 
       gap-6
-      px-8
+      px-8 md:px-16
       zoom-100:proj-container zoom-100:proj-grid
       zoom-125:proj-container zoom-125:proj-grid
     "
   >
+          {projects.map((project, index) => (
+            <Zoom
+              key={index}
+              duration={450}
+              fraction={0.05}  // 👈 triggers immediately when slightly visible
+              damping={0.15}
+            >
+              <div className="animated-border rounded-xl p-0.5">
+                <div className="bg-[#111] p-6 rounded-xl shadow-xl skills-bg border border-gray-700 transition-all flex flex-col items-center justify-between h-full max-h-[600px] overflow-hidden">
+                  {/* Project Image */}
+                  <div className="w-full h-48 rounded-xl overflow-hidden mb-6">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
 
-        {projects.map((project, index) => (
-          <Zoom
-                               key={index}
-                               duration={450}
-                               fraction={0.05}    // 👈 triggers immediately when slightly visible
-                               damping={0.15}
-                             >
-           <div className="animated-border rounded-xl p-0.5">
-          <div
-            key={index}
-            className="bg-[#111] p-6 rounded-xl shadow-xl skills-bg border border-gray-700 transition-all flex flex-col items-center"
-          >
-            {/* Project Image */}
-            <div className="w-70 lg:w-90 h-45 rounded-xl overflow-hidden mb-4">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover m-1"
-              />
-            </div>
-  {/* Project Title */}
-  <h3 className="text-xl font-semibold mb-2 project-title">
-    {project.title}
-  </h3>
+                  {/* Project Title */}
+                  <h3 className="text-xl font-semibold mb-2 project-title">
+                    {project.title}
+                  </h3>
 
-  {/* Live Demo Button */}
-  {project.demoLink && (
-    <a
-      href={project.demoLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="flex items-center gap-1 text-white hover:text-blue-400 hover:underline mb-2"
-    >
-      Live Demo <FiExternalLink />
-    </a>
-  )}
+                  {/* Live Demo Button */}
+                  {project.demoLink && (
+                    <a
+                      href={project.demoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-white hover:text-blue-400 hover:underline mb-2"
+                    >
+                      Live Demo <FiExternalLink />
+                    </a>
+                  )}
 
-            <p className="text-gray-300 mb-8 mt-2 text-center">{project.description}</p>
+                  <p className="text-gray-300 mb-8 mt-2 text-center flex-grow">{project.description}</p>
 
-            {/* Tech Stack */}
-            <div className="flex flex-wrap justify-center gap-2 mb-2">
-              {project.tech.map((t, i) => (
-                <span
-                  key={i}
-                  className="text-sm px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full"
-                >
-                  {t}
-                </span>
-              ))}
-            </div>
-          </div>
-          </div>
-          </Zoom>
-        ))}
+                  {/* Tech Stack */}
+                  <div className="flex flex-wrap justify-center gap-2 mb-2">
+                    {project.tech.map((t, i) => (
+                      <span
+                        key={i}
+                        className="text-sm px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full"
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </Zoom>
+          ))}
+        </div>
       </div>
-         </div>
     </section>
   );
 }
