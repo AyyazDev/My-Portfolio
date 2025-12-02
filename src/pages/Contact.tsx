@@ -59,7 +59,7 @@ export default function Contact() {
       </div>
 
       <div className="w-full flex justify-center">
-<div className="grid zoom-100:wide-card zoom-100:wide-min grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 justify-center max-w-[1600px] w-full px-4 lg:px-23">
+<div className="grid zoom-100:wide-card zoom-100:wide-min grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 justify-center max-w-[1600px] w-full px-4 md:px-8 lg:px-23 xl:px-20 2xl:px-24">
           <Zoom duration={450} fraction={0.05} damping={0.15}>
             <div className="animated-border rounded-xl p-0.5">
               <div className="flex flex-col items-center justify-center p-6 skills-bg rounded-xl shadow-lg w-full">

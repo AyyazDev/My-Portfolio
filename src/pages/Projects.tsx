@@ -48,7 +48,7 @@ export default function Projects() {
       grid 
       grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 
       gap-6
-      px-8 md:px-16
+      px-8 md:px-12
       zoom-100:proj-container zoom-100:proj-grid
       zoom-125:proj-container zoom-125:proj-grid
     "
